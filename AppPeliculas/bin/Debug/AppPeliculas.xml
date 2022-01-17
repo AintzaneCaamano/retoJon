@@ -1,0 +1,231 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+AppPeliculas
+</name>
+</assembly>
+<members>
+<member name="T:AppPeliculas.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:AppPeliculas.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:AppPeliculas.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.ClientesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.FacturasDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.GenerosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.LineasFacDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.MunicipiosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.PeliculasDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.ProveedoresDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.ProvinciasDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.ClientesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.FacturasRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.GenerosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.LineasFacRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.MunicipiosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.PeliculasRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.ProveedoresRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.ProvinciasRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.ClientesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.FacturasRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.GenerosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.LineasFacRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.MunicipiosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.PeliculasRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.ProveedoresRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSet.ProvinciasRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSetTableAdapters.ClientesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSetTableAdapters.FacturasTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSetTableAdapters.GenerosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSetTableAdapters.LineasFacTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSetTableAdapters.MunicipiosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSetTableAdapters.PeliculasTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSetTableAdapters.ProveedoresTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSetTableAdapters.ProvinciasTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:AppPeliculas.EMPRESADataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(AppPeliculas.EMPRESADataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:AppPeliculas.EMPRESADataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(AppPeliculas.EMPRESADataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:AppPeliculas.EMPRESADataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(AppPeliculas.EMPRESADataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:AppPeliculas.EMPRESADataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:AppPeliculas.EMPRESADataSetTableAdapters.TableAdapterManager.UpdateAll(AppPeliculas.EMPRESADataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:AppPeliculas.EMPRESADataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>

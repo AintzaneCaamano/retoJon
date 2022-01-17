@@ -1,0 +1,15 @@
+D:\retoJon\retoJon\AppPeliculas\bin\Debug\EMPRESA.mdb
+D:\retoJon\retoJon\AppPeliculas\bin\Debug\AppPeliculas.exe.config
+D:\retoJon\retoJon\AppPeliculas\bin\Debug\AppPeliculas.exe
+D:\retoJon\retoJon\AppPeliculas\bin\Debug\AppPeliculas.pdb
+D:\retoJon\retoJon\AppPeliculas\bin\Debug\AppPeliculas.xml
+D:\retoJon\retoJon\AppPeliculas\obj\Debug\AppPeliculas.vbproj.AssemblyReference.cache
+D:\retoJon\retoJon\AppPeliculas\obj\Debug\AppPeliculas.GestionPeliculas.resources
+D:\retoJon\retoJon\AppPeliculas\obj\Debug\AppPeliculas.Resources.resources
+D:\retoJon\retoJon\AppPeliculas\obj\Debug\AppPeliculas.vbproj.GenerateResource.cache
+D:\retoJon\retoJon\AppPeliculas\obj\Debug\AppPeliculas.vbproj.CoreCompileInputs.cache
+D:\retoJon\retoJon\AppPeliculas\obj\Debug\AppPeliculas.exe
+D:\retoJon\retoJon\AppPeliculas\obj\Debug\AppPeliculas.xml
+D:\retoJon\retoJon\AppPeliculas\obj\Debug\AppPeliculas.pdb
+D:\retoJon\retoJon\AppPeliculas\obj\Debug\AppPeliculas.AltaPelis.resources
+D:\retoJon\retoJon\AppPeliculas\obj\Debug\AppPeliculas.Form1.resources
