@@ -1,16 +1,16 @@
 ﻿Public Class frmMain
 
-    Private f1v As GestionUsuarios
-        Public Property f1() As GestionUsuarios
-            Get
-                Return f1v
-            End Get
-            Set(ByVal value As GestionUsuarios)
-                f1v = value
-            End Set
-        End Property
+    'Private f1v As GestionUsuarios
+    'Public Property f1() As GestionUsuarios
+    'Get
+    'Return f1v
+    'End Get
+    'Set(ByVal value As GestionUsuarios)
+    '       f1v = value
+    'End Set
+    'End Property
 
-        Private f2v As GestionPeliculas
+    Private f2v As GestionPeliculas
         Public Property f2() As GestionPeliculas
             Get
                 Return f2v
@@ -23,13 +23,12 @@
         Public Sub New()
             ' Esta llamada es exigida por el diseñador.
             InitializeComponent()
-            f1 = New GestionUsuarios
-            f2 = New GestionPeliculas
+        'f1 = New GestionUsuarios
+        f2 = New GestionPeliculas
         End Sub
 
     Private Sub abrirForm(f As Form)
         'Dim f As New Form()
-        f.MdiParent = Me
         f.WindowState = FormWindowState.Maximized
         f.Show()
         f.Activate()
@@ -39,8 +38,8 @@
         Me.KeyPreview = True
     End Sub
 
-    Private Sub GestionPeliculasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionPeliculasToolStripMenuItem.Click
-        abrirForm(f1)
+    Private Sub PeliculasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PeliculasToolStripMenuItem.Click
+        'abrirForm(f1)
     End Sub
 
     Private Sub GestionUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionUsuariosToolStripMenuItem.Click
@@ -50,4 +49,5 @@
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
     End Sub
+
 End Class
