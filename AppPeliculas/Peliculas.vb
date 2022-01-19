@@ -20,13 +20,13 @@
         End Set
     End Property
 
-    Private _anio As String
-    Public Property Anio() As String
+    Private _anyo As Integer
+    Public Property anyo() As Integer
         Get
-            Return _anio
+            Return _anyo
         End Get
-        Set(ByVal value As String)
-            _anio = value
+        Set(ByVal value As Integer)
+            _anyo = value
         End Set
     End Property
 
@@ -71,12 +71,12 @@
         End Set
     End Property
 
-    Private _genero As String
-    Public Property genero() As String
+    Private _genero As Integer
+    Public Property genero() As Integer
         Get
             Return _genero
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             _genero = value
         End Set
     End Property
