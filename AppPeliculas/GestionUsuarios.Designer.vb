@@ -32,17 +32,21 @@ Partial Class GestionUsuarios
         '
         'GridUsuarios
         '
+        Me.GridUsuarios.AllowUserToAddRows = False
+        Me.GridUsuarios.AllowUserToDeleteRows = False
         Me.GridUsuarios.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GridUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridUsuarios.Location = New System.Drawing.Point(12, 12)
         Me.GridUsuarios.Name = "GridUsuarios"
+        Me.GridUsuarios.ReadOnly = True
         Me.GridUsuarios.Size = New System.Drawing.Size(527, 214)
         Me.GridUsuarios.TabIndex = 0
         '
         'BtnDetalles
         '
+        Me.BtnDetalles.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.BtnDetalles.Location = New System.Drawing.Point(12, 239)
         Me.BtnDetalles.Name = "BtnDetalles"
         Me.BtnDetalles.Size = New System.Drawing.Size(75, 23)
@@ -52,6 +56,7 @@ Partial Class GestionUsuarios
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(93, 239)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
@@ -61,6 +66,7 @@ Partial Class GestionUsuarios
         '
         'Button2
         '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button2.Location = New System.Drawing.Point(174, 239)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
@@ -70,6 +76,7 @@ Partial Class GestionUsuarios
         '
         'Button3
         '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button3.AutoSize = True
         Me.Button3.Location = New System.Drawing.Point(255, 239)
         Me.Button3.Name = "Button3"
