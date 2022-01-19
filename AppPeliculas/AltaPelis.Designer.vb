@@ -34,10 +34,10 @@ Partial Class AltaPelis
         Me.lblGenero = New System.Windows.Forms.Label()
         Me.txtBoxAnyo = New System.Windows.Forms.TextBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtBoxProductora = New System.Windows.Forms.TextBox()
+        Me.txtBoxPais = New System.Windows.Forms.TextBox()
+        Me.txtBoxPrecio = New System.Windows.Forms.TextBox()
+        Me.TextBtxtBoxDirector = New System.Windows.Forms.TextBox()
         Me.btnGuardar = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -155,37 +155,37 @@ Partial Class AltaPelis
         Me.NumericUpDown1.Size = New System.Drawing.Size(294, 20)
         Me.NumericUpDown1.TabIndex = 11
         '
-        'TextBox1
+        'txtBoxProductora
         '
-        Me.TextBox1.Location = New System.Drawing.Point(98, 112)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 8, 3, 3)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(294, 20)
-        Me.TextBox1.TabIndex = 12
+        Me.txtBoxProductora.Location = New System.Drawing.Point(98, 112)
+        Me.txtBoxProductora.Margin = New System.Windows.Forms.Padding(3, 8, 3, 3)
+        Me.txtBoxProductora.Name = "txtBoxProductora"
+        Me.txtBoxProductora.Size = New System.Drawing.Size(294, 20)
+        Me.txtBoxProductora.TabIndex = 12
         '
-        'TextBox2
+        'txtBoxPais
         '
-        Me.TextBox2.Location = New System.Drawing.Point(98, 143)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 8, 3, 3)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(294, 20)
-        Me.TextBox2.TabIndex = 13
+        Me.txtBoxPais.Location = New System.Drawing.Point(98, 143)
+        Me.txtBoxPais.Margin = New System.Windows.Forms.Padding(3, 8, 3, 3)
+        Me.txtBoxPais.Name = "txtBoxPais"
+        Me.txtBoxPais.Size = New System.Drawing.Size(294, 20)
+        Me.txtBoxPais.TabIndex = 13
         '
-        'TextBox3
+        'txtBoxPrecio
         '
-        Me.TextBox3.Location = New System.Drawing.Point(98, 174)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(3, 8, 3, 3)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(294, 20)
-        Me.TextBox3.TabIndex = 14
+        Me.txtBoxPrecio.Location = New System.Drawing.Point(98, 174)
+        Me.txtBoxPrecio.Margin = New System.Windows.Forms.Padding(3, 8, 3, 3)
+        Me.txtBoxPrecio.Name = "txtBoxPrecio"
+        Me.txtBoxPrecio.Size = New System.Drawing.Size(294, 20)
+        Me.txtBoxPrecio.TabIndex = 14
         '
-        'TextBox4
+        'TextBtxtBoxDirector
         '
-        Me.TextBox4.Location = New System.Drawing.Point(98, 205)
-        Me.TextBox4.Margin = New System.Windows.Forms.Padding(3, 8, 3, 3)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(294, 20)
-        Me.TextBox4.TabIndex = 15
+        Me.TextBtxtBoxDirector.Location = New System.Drawing.Point(98, 205)
+        Me.TextBtxtBoxDirector.Margin = New System.Windows.Forms.Padding(3, 8, 3, 3)
+        Me.TextBtxtBoxDirector.Name = "TextBtxtBoxDirector"
+        Me.TextBtxtBoxDirector.Size = New System.Drawing.Size(294, 20)
+        Me.TextBtxtBoxDirector.TabIndex = 15
         '
         'btnGuardar
         '
@@ -202,10 +202,10 @@ Partial Class AltaPelis
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.btnGuardar)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TextBtxtBoxDirector)
+        Me.Controls.Add(Me.txtBoxPrecio)
+        Me.Controls.Add(Me.txtBoxPais)
+        Me.Controls.Add(Me.txtBoxProductora)
         Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.txtBoxAnyo)
         Me.Controls.Add(Me.lblGenero)
@@ -238,9 +238,9 @@ Partial Class AltaPelis
     Friend WithEvents lblGenero As Label
     Friend WithEvents txtBoxAnyo As TextBox
     Friend WithEvents NumericUpDown1 As NumericUpDown
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtBoxProductora As TextBox
+    Friend WithEvents txtBoxPais As TextBox
+    Friend WithEvents txtBoxPrecio As TextBox
+    Friend WithEvents TextBtxtBoxDirector As TextBox
     Friend WithEvents btnGuardar As Button
 End Class
