@@ -10,7 +10,6 @@
         Me.FacturasTableAdapter.Fill(Me.EMPRESADataSet.Facturas)
         'TODO: esta línea de código carga datos en la tabla 'EMPRESADataSet.Clientes' Puede moverla o quitarla según sea necesario.
         Me.ClientesTableAdapter.Fill(Me.EMPRESADataSet.Clientes)
-
     End Sub
 
     Private Sub btnPelisDetalles_Click(sender As Object, e As EventArgs) Handles btnPelisDetalles.Click
