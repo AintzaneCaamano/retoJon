@@ -1,14 +1,14 @@
 ﻿Public Class frmMain
 
-    'Private f1v As GestionUsuarios
-    'Public Property f1() As GestionUsuarios
-    'Get
-    'Return f1v
-    'End Get
-    'Set(ByVal value As GestionUsuarios)
-    '       f1v = value
-    'End Set
-    'End Property
+    Private f1v As GestionUsuarios
+    Public Property f1() As GestionUsuarios
+        Get
+            Return f1v
+        End Get
+        Set(ByVal value As GestionUsuarios)
+            f1v = value
+        End Set
+    End Property
 
     Private f2v As GestionPeliculas
         Public Property f2() As GestionPeliculas
@@ -23,7 +23,7 @@
         Public Sub New()
             ' Esta llamada es exigida por el diseñador.
             InitializeComponent()
-        'f1 = New GestionUsuarios
+        f1 = New GestionUsuarios
         f2 = New GestionPeliculas
         End Sub
 
@@ -38,8 +38,8 @@
         Me.KeyPreview = True
     End Sub
 
-    Private Sub PeliculasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PeliculasToolStripMenuItem.Click
-        'abrirForm(f1)
+    Private Sub GestionPeliculasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionPeliculasToolStripMenuItem.Click
+
     End Sub
 
     Private Sub GestionUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionUsuariosToolStripMenuItem.Click
@@ -50,4 +50,11 @@
         Me.Close()
     End Sub
 
+    Private Sub CatalogoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CatalogoToolStripMenuItem.Click
+        abrirForm(f1)
+    End Sub
+
+    Private Sub CatalogoProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CatalogoProveedoresToolStripMenuItem.Click
+        abrirForm(f1)
+    End Sub
 End Class
