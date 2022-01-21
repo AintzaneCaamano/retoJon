@@ -33,13 +33,12 @@ Partial Class AltaPelis
         Me.lblDirector = New System.Windows.Forms.Label()
         Me.lblGenero = New System.Windows.Forms.Label()
         Me.txtBoxAnyo = New System.Windows.Forms.TextBox()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.txtBoxProductora = New System.Windows.Forms.TextBox()
         Me.txtBoxPais = New System.Windows.Forms.TextBox()
         Me.txtBoxPrecio = New System.Windows.Forms.TextBox()
         Me.TextBtxtBoxDirector = New System.Windows.Forms.TextBox()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ComboBoxGeneros = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'txtBoxTitulo
@@ -147,14 +146,6 @@ Partial Class AltaPelis
         Me.txtBoxAnyo.Size = New System.Drawing.Size(294, 20)
         Me.txtBoxAnyo.TabIndex = 10
         '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(98, 238)
-        Me.NumericUpDown1.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(294, 20)
-        Me.NumericUpDown1.TabIndex = 11
-        '
         'txtBoxProductora
         '
         Me.txtBoxProductora.Location = New System.Drawing.Point(98, 112)
@@ -196,17 +187,25 @@ Partial Class AltaPelis
         Me.btnGuardar.Text = "Dar de Alta"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
+        'ComboBoxGeneros
+        '
+        Me.ComboBoxGeneros.FormattingEnabled = True
+        Me.ComboBoxGeneros.Location = New System.Drawing.Point(98, 242)
+        Me.ComboBoxGeneros.Name = "ComboBoxGeneros"
+        Me.ComboBoxGeneros.Size = New System.Drawing.Size(294, 21)
+        Me.ComboBoxGeneros.TabIndex = 17
+        '
         'AltaPelis
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.ComboBoxGeneros)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.TextBtxtBoxDirector)
         Me.Controls.Add(Me.txtBoxPrecio)
         Me.Controls.Add(Me.txtBoxPais)
         Me.Controls.Add(Me.txtBoxProductora)
-        Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.txtBoxAnyo)
         Me.Controls.Add(Me.lblGenero)
         Me.Controls.Add(Me.lblDirector)
@@ -220,7 +219,6 @@ Partial Class AltaPelis
         Me.Controls.Add(Me.txtBoxTitulo)
         Me.Name = "AltaPelis"
         Me.Text = "AltaPelis"
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -237,10 +235,10 @@ Partial Class AltaPelis
     Friend WithEvents lblDirector As Label
     Friend WithEvents lblGenero As Label
     Friend WithEvents txtBoxAnyo As TextBox
-    Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents txtBoxProductora As TextBox
     Friend WithEvents txtBoxPais As TextBox
     Friend WithEvents txtBoxPrecio As TextBox
     Friend WithEvents TextBtxtBoxDirector As TextBox
     Friend WithEvents btnGuardar As Button
+    Friend WithEvents ComboBoxGeneros As ComboBox
 End Class
