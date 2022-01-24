@@ -24,9 +24,9 @@ Partial Class GestionUsuarios
     Private Sub InitializeComponent()
         Me.GridUsuarios = New System.Windows.Forms.DataGridView()
         Me.BtnDetalles = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.BtnModificar = New System.Windows.Forms.Button()
+        Me.BtnBaja = New System.Windows.Forms.Button()
+        Me.BtnRegistrar = New System.Windows.Forms.Button()
         CType(Me.GridUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -54,45 +54,45 @@ Partial Class GestionUsuarios
         Me.BtnDetalles.Text = "Detalles"
         Me.BtnDetalles.UseVisualStyleBackColor = True
         '
-        'Button1
+        'BtnModificar
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(93, 239)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Modificar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BtnModificar.Location = New System.Drawing.Point(93, 239)
+        Me.BtnModificar.Name = "BtnModificar"
+        Me.BtnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnModificar.TabIndex = 2
+        Me.BtnModificar.Text = "Modificar"
+        Me.BtnModificar.UseVisualStyleBackColor = True
         '
-        'Button2
+        'BtnBaja
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(174, 239)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Dar de Baja"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnBaja.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BtnBaja.Location = New System.Drawing.Point(174, 239)
+        Me.BtnBaja.Name = "BtnBaja"
+        Me.BtnBaja.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBaja.TabIndex = 3
+        Me.BtnBaja.Text = "Dar de Baja"
+        Me.BtnBaja.UseVisualStyleBackColor = True
         '
-        'Button3
+        'BtnRegistrar
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button3.AutoSize = True
-        Me.Button3.Location = New System.Drawing.Point(255, 239)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(82, 23)
-        Me.Button3.TabIndex = 4
-        Me.Button3.Text = "Añadir Cliente"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BtnRegistrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BtnRegistrar.AutoSize = True
+        Me.BtnRegistrar.Location = New System.Drawing.Point(255, 239)
+        Me.BtnRegistrar.Name = "BtnRegistrar"
+        Me.BtnRegistrar.Size = New System.Drawing.Size(82, 23)
+        Me.BtnRegistrar.TabIndex = 4
+        Me.BtnRegistrar.Text = "Añadir Cliente"
+        Me.BtnRegistrar.UseVisualStyleBackColor = True
         '
         'GestionUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(551, 274)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BtnRegistrar)
+        Me.Controls.Add(Me.BtnBaja)
+        Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnDetalles)
         Me.Controls.Add(Me.GridUsuarios)
         Me.Name = "GestionUsuarios"
@@ -105,7 +105,7 @@ Partial Class GestionUsuarios
 
     Friend WithEvents GridUsuarios As DataGridView
     Friend WithEvents BtnDetalles As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents BtnModificar As Button
+    Friend WithEvents BtnBaja As Button
+    Friend WithEvents BtnRegistrar As Button
 End Class

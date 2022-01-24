@@ -1,10 +1,24 @@
-﻿Public Class GestionUsuarios
+Public Class GestionUsuarios
 
-    Dim file As String = IO.Path.Combine(IO.Directory.GetCurrentDirectory(), "EMPRESA.mdb")
-    Dim cnnString As String = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={file}"
+    Dim cnnString As String = My.Settings.EMPRESAConnectionString
+
+    Private _formUpdateUsuario As UpdateUsuario
+    Public Property FormUpdateUsuario() As UpdateUsuario
+        Get
+            Return _formUpdateUsuario
+        End Get
+        Set(ByVal value As UpdateUsuario)
+            _formUpdateUsuario = value
+        End Set
+    End Property
 
     Private Sub GestionUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        CargarDatosClientes()
+
+    End Sub
+
+    Sub CargarDatosClientes()
         ' instanciamos la base de datos
         Dim cnnDB As OleDb.OleDbConnection = New OleDb.OleDbConnection(cnnString)
 
@@ -14,7 +28,7 @@
 
                 Try
 
-                    Dim sql As String = "SELECT ClienteId, Clientes.Nombre, Apellido1, Apellido2, Municipios.Nombre As Municipio FROM Clientes LEFT JOIN Municipios ON Clientes.munId = Municipios.munId"
+                    Dim sql As String = "SELECT ClienteId, Clientes.Nombre, Apellido1, Apellido2, Municipios.Nombre As Municipio FROM Clientes INNER JOIN Municipios ON Clientes.munId = Municipios.munId"
                     Dim cmd As OleDb.OleDbCommand = New OleDb.OleDbCommand(sql, cnnDB)
 
                     Try
@@ -45,7 +59,7 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnDetalles.Click
+    Private Sub BtnDetalles_Click(sender As Object, e As EventArgs) Handles BtnDetalles.Click
         Dim idCliente
 
         Try
@@ -97,7 +111,7 @@
         End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub BtnBaja_Click(sender As Object, e As EventArgs) Handles BtnBaja.Click
         Dim idCliente
 
         Try
@@ -137,6 +151,11 @@
 
         End Try
     End Sub
+    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
+        Dim idCliente = GridUsuarios.Rows.Item(GridUsuarios.SelectedCells.Item(0).RowIndex).Cells.Item("ClienteId").Value
 
+        _formUpdateUsuario = New UpdateUsuario(idCliente)
+        _formUpdateUsuario.Show()
 
+    End Sub
 End Class
