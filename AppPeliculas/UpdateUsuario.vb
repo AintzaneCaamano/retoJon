@@ -11,6 +11,26 @@ Public Class UpdateUsuario
         End Set
     End Property
 
+    Private _idProvincia As String
+    Public Property IdProvincia() As String
+        Get
+            Return _idProvincia
+        End Get
+        Set(ByVal value As String)
+            _idProvincia = value
+        End Set
+    End Property
+
+    Private _idMunicipio As Integer
+    Public Property IdMunicipio() As Integer
+        Get
+            Return _idMunicipio
+        End Get
+        Set(ByVal value As Integer)
+            _idMunicipio = value
+        End Set
+    End Property
+
     Public Sub New(idCliente As Integer)
 
         InitializeComponent()
@@ -25,7 +45,7 @@ Public Class UpdateUsuario
 
                 Try
 
-                    Dim sql As String = $"SELECT Nombre, Apellido1, Apellido2, Direccion, CP, munId FROM Clientes WHERE ClienteId = {idCliente}"
+                    Dim sql As String = $"SELECT Clientes.Nombre, Apellido1, Apellido2, Direccion, CP, Municipios.MunId, ProvCod FROM Clientes INNER JOIN Municipios ON Clientes.MunId = Municipios.MunId WHERE ClienteId = {idCliente}"
                     Dim cmd As OleDb.OleDbCommand = New OleDb.OleDbCommand(sql, cnnDB)
 
                     Try
@@ -41,6 +61,9 @@ Public Class UpdateUsuario
                             TextApellido2.Text = dt.Rows.Item(0).Item(2)
                             TextDireccion.Text = dt.Rows.Item(0).Item(3)
                             TextCP.Text = dt.Rows.Item(0).Item(4)
+
+                            _idMunicipio = CInt(dt.Rows.Item(0).Item(5))
+                            _idProvincia = dt.Rows.Item(0).Item(6)
 
                             CargarProvincias()
                             CargarMunicipios(ComboProvincia.SelectedValue)
@@ -80,14 +103,22 @@ Public Class UpdateUsuario
 
                         Dim dt As DataTable = New DataTable()
                         Dim adapter As OleDb.OleDbDataAdapter = New OleDb.OleDbDataAdapter(cmd)
+                        Dim selectedIndex As Integer = 0
 
                         adapter.Fill(dt)
+
+                        For i = 0 To dt.Rows.Count - 1
+                            If dt.Rows.Item(i).Item(0) = _idProvincia Then
+                                selectedIndex = i
+                            End If
+                        Next
 
                         ComboProvincia.Items.Clear()
 
                         ComboProvincia.DataSource = dt
                         ComboProvincia.ValueMember = "CodPro"
                         ComboProvincia.DisplayMember = "NombPro"
+                        ComboProvincia.SelectedIndex = selectedIndex
 
                         ComboProvincia.Refresh()
 
@@ -125,16 +156,23 @@ Public Class UpdateUsuario
 
                         Dim dt As DataTable = New DataTable()
                         Dim adapter As OleDb.OleDbDataAdapter = New OleDb.OleDbDataAdapter(cmd)
+                        Dim selectedIndex As Integer = 0
 
                         adapter.Fill(dt)
+
+                        For i = 0 To dt.Rows.Count - 1
+                            If dt.Rows.Item(i).Item(0) = _idMunicipio Then
+                                selectedIndex = i
+                            End If
+                        Next
 
                         ComboMunicipio.DataSource = dt
                         ComboMunicipio.ValueMember = "MunId"
                         ComboMunicipio.DisplayMember = "Nombre"
+                        ComboMunicipio.SelectedIndex = selectedIndex
 
                         ComboMunicipio.Refresh()
 
-                        'ComboMunicipio.SelectedValue = 
                     Catch ex As Exception
 
                     End Try

@@ -29,7 +29,7 @@ Public Class GestionUsuarios
     End Sub
 
     Sub CargarDatosClientes()
-        ' instanciamos la base de datos
+
         Dim cnnDB As OleDb.OleDbConnection = New OleDb.OleDbConnection(cnnString)
 
         Try
@@ -49,6 +49,7 @@ Public Class GestionUsuarios
                         adapter.Fill(dt)
 
                         GridUsuarios.DataSource = dt
+                        GridUsuarios.Refresh()
 
                     Catch ex As Exception
 

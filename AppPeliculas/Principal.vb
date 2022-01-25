@@ -21,14 +21,15 @@
     End Property
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        _formUsuarios = New GestionUsuarios()
-        _formPeliculas = New GestionPeliculas()
+
     End Sub
 
     Private Sub BtnFormUsuarios_Click(sender As Object, e As EventArgs) Handles BtnFormUsuarios.Click
+        _formUsuarios = New GestionUsuarios()
         _formUsuarios.Show()
     End Sub
     Private Sub BtnFormPeliculas_Click(sender As Object, e As EventArgs) Handles BtnFormPeliculas.Click
+        _formPeliculas = New GestionPeliculas()
         _formPeliculas.Show()
     End Sub
 
@@ -40,7 +41,7 @@
         ' Ta bueno
         If e.CloseReason = 3 Then
             e.Cancel = True
-            MessageBox.Show("(╯°□°)╯ Cierra con el botón que para algo está")
+            MessageBox.Show("(╯°□°)╯ Cierra con el botón del menú que para algo está")
         End If
     End Sub
 End Class

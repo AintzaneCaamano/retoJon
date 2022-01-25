@@ -168,6 +168,7 @@ Partial Class UpdateUsuario
         Me.UpdatePasswordCheck.TabIndex = 14
         Me.UpdatePasswordCheck.Text = "Cambiar contraseña"
         Me.UpdatePasswordCheck.UseVisualStyleBackColor = True
+        Me.UpdatePasswordCheck.Visible = False
         '
         'UpdatePasswordTest
         '
