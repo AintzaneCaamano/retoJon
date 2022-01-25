@@ -12,21 +12,21 @@
         End Set
     End Property
 
-    ' Private _modPeli As ModificarPeli
-    ' Public Property modificarPeli() As ModificarPeli
-    ' Get
-    ' Return _modPeli
-    '     End Get
-    '  Set(ByVal value As ModificarPeli)
-    '         _modPeli = value
-    ' End Set
-    ' End Property
+    Private _modPeli As ModificarPelis
+    Public Property modificarPeli() As ModificarPelis
+        Get
+            Return _modPeli
+        End Get
+        Set(ByVal value As ModificarPelis)
+            _modPeli = value
+        End Set
+    End Property
 
     Public Sub New()
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
         altaPelis = New AltaPelis
-        '   modificarPeli = New ModificarPeli
+        modificarPeli = New ModificarPelis
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 
@@ -92,8 +92,8 @@
     End Sub
 
     Private Sub btnPelisModificar_Click(sender As Object, e As EventArgs) Handles btnPelisModificar.Click
-        '    modificarPeli.Show()
-        '    modificarPeli.Activate()
+        modificarPeli.Show()
+        modificarPeli.Activate()
     End Sub
 
     Private Sub btnPelisBaja_Click(sender As Object, e As EventArgs) Handles btnPelisBaja.Click

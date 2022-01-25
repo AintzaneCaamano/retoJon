@@ -209,7 +209,7 @@ Partial Class AltaPelis
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(417, 388)
         Me.Controls.Add(Me.btnAltaVolver)
         Me.Controls.Add(Me.ComboBoxGeneros)
         Me.Controls.Add(Me.btnGuardar)
