@@ -12,6 +12,16 @@ Public Class GestionUsuarios
         End Set
     End Property
 
+    Private _formRegistrarUsuario As RegistrarUsuario
+    Public Property FormRegistrarUsuario() As RegistrarUsuario
+        Get
+            Return _formRegistrarUsuario
+        End Get
+        Set(ByVal value As RegistrarUsuario)
+            _formRegistrarUsuario = value
+        End Set
+    End Property
+
     Private Sub GestionUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         CargarDatosClientes()
@@ -106,8 +116,8 @@ Public Class GestionUsuarios
                     cnnDB.Close()
                 End If
             End Try
-        Catch ex As Exception
-
+        Catch ex As ArgumentOutOfRangeException
+            MessageBox.Show("Selecciona un registro para poder ver sus detalles", "Aviso")
         End Try
     End Sub
 
@@ -132,7 +142,7 @@ Public Class GestionUsuarios
                         If cmd.ExecuteNonQuery() > 0 Then
                             MessageBox.Show("Cliente dado de baja con exito")
                         Else
-                            MessageBox.Show("Ha ocurrido un error al dar de baja al cliente")
+                            MessageBox.Show("Ha ocurrido un error al dar de baja al cliente", "Aviso")
                         End If
 
                     Catch ex As Exception
@@ -147,15 +157,29 @@ Public Class GestionUsuarios
                     cnnDB.Close()
                 End If
             End Try
-        Catch ex As Exception
-
+        Catch ex As ArgumentOutOfRangeException
+            MessageBox.Show("Selecciona un registro para darlo de baja")
         End Try
     End Sub
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        Dim idCliente = GridUsuarios.Rows.Item(GridUsuarios.SelectedCells.Item(0).RowIndex).Cells.Item("ClienteId").Value
+        Try
+            Dim idCliente = GridUsuarios.Rows.Item(GridUsuarios.SelectedCells.Item(0).RowIndex).Cells.Item("ClienteId").Value
 
-        _formUpdateUsuario = New UpdateUsuario(idCliente)
-        _formUpdateUsuario.Show()
+            _formUpdateUsuario = New UpdateUsuario(idCliente)
+            _formUpdateUsuario.Show()
+        Catch ex As ArgumentOutOfRangeException
+            MessageBox.Show("Selecciona un registro para poder modificarlo", "Aviso")
+        End Try
+    End Sub
 
+    Private Sub BtnRegistrar_Click(sender As Object, e As EventArgs) Handles BtnRegistrar.Click
+        Try
+            Dim idCliente = GridUsuarios.Rows.Item(GridUsuarios.SelectedCells.Item(0).RowIndex).Cells.Item("ClienteId").Value
+
+            _formRegistrarUsuario = New RegistrarUsuario()
+            _formRegistrarUsuario.Show()
+        Catch ex As ArgumentOutOfRangeException
+            MessageBox.Show("Selecciona un registro para poder modificarlo", "Aviso")
+        End Try
     End Sub
 End Class
