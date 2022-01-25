@@ -91,6 +91,12 @@
     <Compile Include="ModificarPelis.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Principal.Designer.vb">
+      <DependentUpon>Principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RegistrarUsuario.Designer.vb">
       <DependentUpon>RegistrarUsuario.vb</DependentUpon>
     </Compile>
@@ -109,13 +115,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EMPRESADataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="GestionPeliculas.Designer.vb">
       <DependentUpon>GestionPeliculas.vb</DependentUpon>
@@ -144,9 +143,6 @@
     <EmbeddedResource Include="AltaPelis.resx">
       <DependentUpon>AltaPelis.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GestionPeliculas.resx">
       <DependentUpon>GestionPeliculas.vb</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +157,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrarUsuario.resx">
       <DependentUpon>RegistrarUsuario.vb</DependentUpon>
