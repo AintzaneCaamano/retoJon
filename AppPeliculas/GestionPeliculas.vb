@@ -36,7 +36,6 @@
 
     Private Sub btnPelisDetalles_Click(sender As Object, e As EventArgs) Handles btnPelisDetalles.Click
         Dim idCliente
-
         Try
             idCliente = gridViewPelis.Rows.Item(gridViewPelis.SelectedCells.Item(0).RowIndex).Cells.Item("PeliculaId").Value
 
@@ -60,9 +59,14 @@
                             adapter.Fill(dt)
 
                             For Each row As DataRow In dt.Rows
-
-                                MessageBox.Show($"Id: {row.Field(Of Integer)("PeliculaId")} {Environment.NewLine}Titulo: {row.Field(Of String)("Titulo")} {Environment.NewLine} Duracion: {row.Field(Of String)("Duracion")} {Environment.NewLine} CodGenero: {row.Field(Of String)("CodGenero")} {Environment.NewLine}Dirección: {row.Field(Of String)("Direccion")} {Environment.NewLine} Anyo: {row.Field(Of String)("Anyo")} {Environment.NewLine} Productora: {row.Field(Of Boolean)("Productora")} {Environment.NewLine} Pais: {row.Field(Of String)("Pais")}")
-
+                                MessageBox.Show($"Id: {row.Field(Of Integer)("PeliculaId")} 
+                                {Environment.NewLine}Titulo: {row.Field(Of String)("Titulo")} 
+                                {Environment.NewLine} Duracion: {row.Field(Of String)("Duracion")}
+                                {Environment.NewLine} CodGenero: {row.Field(Of String)("CodGenero")}
+                                {Environment.NewLine}Dirección: {row.Field(Of String)("Direccion")} 
+                                {Environment.NewLine} Anyo: {row.Field(Of String)("Anyo")} 
+                                {Environment.NewLine} Productora: {row.Field(Of Boolean)("Productora")} 
+                                {Environment.NewLine} Pais: {row.Field(Of String)("Pais")}")
                             Next
 
                         Catch ex As Exception

@@ -166,6 +166,7 @@ Public Class AltaPelis
         Catch ex As Exception
 
         End Try
+        GestionPeliculas.loadData()
     End Sub
 
     Function comprobarLongitud(minimo As Integer, maximo As Integer, text As String) As Boolean
@@ -212,6 +213,10 @@ Public Class AltaPelis
 
                         End While
 
+                        ' Dim dic As New Dictionary(Of Integer, String)
+                        '  Me.ComboBoxGeneros.DataSource = dic
+                        '  Me.ComboBoxGeneros.ValueMember = "Key"
+                        ' Me.ComboBoxGeneros.DisplayMember = "Value"
 
                     Catch ex As Exception
 
