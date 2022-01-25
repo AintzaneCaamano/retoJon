@@ -247,7 +247,7 @@ Partial Class UpdateUsuario
         Me.Controls.Add(Me.LblApellido1)
         Me.Controls.Add(Me.TextNombre)
         Me.Controls.Add(Me.LblNombre)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "UpdateUsuario"
         Me.Text = "Modificar Usuario"
         Me.UpdatePasswordGroup.ResumeLayout(False)
