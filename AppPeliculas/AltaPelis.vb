@@ -232,4 +232,9 @@ Public Class AltaPelis
         Me.ComboBoxGeneros.SelectedIndex = 0
         Return 0
     End Function
+
+    Private Sub btnAltaVolver_Click(sender As Object, e As EventArgs) Handles btnAltaVolver.Click
+        GestionPeliculas.loadData()
+        Me.Dispose()
+    End Sub
 End Class

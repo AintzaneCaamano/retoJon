@@ -39,6 +39,7 @@ Partial Class AltaPelis
         Me.TextBtxtBoxDirector = New System.Windows.Forms.TextBox()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.ComboBoxGeneros = New System.Windows.Forms.ComboBox()
+        Me.btnAltaVolver = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtBoxTitulo
@@ -195,11 +196,21 @@ Partial Class AltaPelis
         Me.ComboBoxGeneros.Size = New System.Drawing.Size(294, 21)
         Me.ComboBoxGeneros.TabIndex = 17
         '
+        'btnAltaVolver
+        '
+        Me.btnAltaVolver.Location = New System.Drawing.Point(22, 339)
+        Me.btnAltaVolver.Name = "btnAltaVolver"
+        Me.btnAltaVolver.Size = New System.Drawing.Size(370, 23)
+        Me.btnAltaVolver.TabIndex = 18
+        Me.btnAltaVolver.Text = "Volver"
+        Me.btnAltaVolver.UseVisualStyleBackColor = True
+        '
         'AltaPelis
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnAltaVolver)
         Me.Controls.Add(Me.ComboBoxGeneros)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.TextBtxtBoxDirector)
@@ -241,4 +252,5 @@ Partial Class AltaPelis
     Friend WithEvents TextBtxtBoxDirector As TextBox
     Friend WithEvents btnGuardar As Button
     Friend WithEvents ComboBoxGeneros As ComboBox
+    Friend WithEvents btnAltaVolver As Button
 End Class
