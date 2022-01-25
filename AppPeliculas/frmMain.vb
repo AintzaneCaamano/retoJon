@@ -38,10 +38,6 @@
         Me.KeyPreview = True
     End Sub
 
-    Private Sub GestionPeliculasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionPeliculasToolStripMenuItem.Click
-
-    End Sub
-
     Private Sub GestionUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionUsuariosToolStripMenuItem.Click
         abrirForm(f2)
     End Sub

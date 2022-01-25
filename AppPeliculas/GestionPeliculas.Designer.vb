@@ -24,29 +24,44 @@ Partial Class GestionPeliculas
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.gridViewPelis = New System.Windows.Forms.DataGridView()
-        Me.EMPRESADataSet = New AppPeliculas.EMPRESADataSet()
+        Me.Titulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Anyo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Director = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodGenero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PeliculasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EMPRESADataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EMPRESADataSet = New AppPeliculas.EMPRESADataSet()
         Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClientesTableAdapter = New AppPeliculas.EMPRESADataSetTableAdapters.ClientesTableAdapter()
         Me.FacturasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.FacturasTableAdapter = New AppPeliculas.EMPRESADataSetTableAdapters.FacturasTableAdapter()
-        Me.PeliculasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PeliculasTableAdapter = New AppPeliculas.EMPRESADataSetTableAdapters.PeliculasTableAdapter()
         Me.btnPelisDetalles = New System.Windows.Forms.Button()
         Me.btnPelisModificar = New System.Windows.Forms.Button()
         Me.btnPelisBaja = New System.Windows.Forms.Button()
         Me.btnPelisCrear = New System.Windows.Forms.Button()
-        Me.Titulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Anyo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Director = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodGenero = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmpresaDataSet1 = New AppPeliculas.EMPRESADataSet()
+        Me.PeliculaIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TituloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DuracionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodGeneroDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AnyoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductoraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PaisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DirectorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaIniDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaFinDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioCompraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioAlquilerDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioProveedorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ExclusividadDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.gridViewPelis, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EMPRESADataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PeliculasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EMPRESADataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EMPRESADataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FacturasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PeliculasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,22 +75,51 @@ Partial Class GestionPeliculas
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gridViewPelis.AutoGenerateColumns = False
         Me.gridViewPelis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridViewPelis.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Titulo, Me.Anyo, Me.Director, Me.CodGenero})
+        Me.gridViewPelis.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Titulo, Me.Anyo, Me.Director, Me.CodGenero, Me.PeliculaIdDataGridViewTextBoxColumn, Me.TituloDataGridViewTextBoxColumn, Me.DuracionDataGridViewTextBoxColumn, Me.CodGeneroDataGridViewTextBoxColumn, Me.AnyoDataGridViewTextBoxColumn, Me.ProductoraDataGridViewTextBoxColumn, Me.PaisDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.DirectorDataGridViewTextBoxColumn, Me.FechaIniDataGridViewTextBoxColumn, Me.FechaFinDataGridViewTextBoxColumn, Me.PrecioCompraDataGridViewTextBoxColumn, Me.PrecioAlquilerDataGridViewTextBoxColumn, Me.PrecioProveedorDataGridViewTextBoxColumn, Me.ExclusividadDataGridViewCheckBoxColumn})
         Me.gridViewPelis.DataSource = Me.PeliculasBindingSource
         Me.gridViewPelis.Location = New System.Drawing.Point(12, 12)
         Me.gridViewPelis.Name = "gridViewPelis"
-        Me.gridViewPelis.Size = New System.Drawing.Size(776, 333)
+        Me.gridViewPelis.Size = New System.Drawing.Size(781, 333)
         Me.gridViewPelis.TabIndex = 0
         '
-        'EMPRESADataSet
+        'Titulo
         '
-        Me.EMPRESADataSet.DataSetName = "EMPRESADataSet"
-        Me.EMPRESADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.Titulo.DataPropertyName = "Titulo"
+        Me.Titulo.HeaderText = "Titulo"
+        Me.Titulo.Name = "Titulo"
+        '
+        'Anyo
+        '
+        Me.Anyo.DataPropertyName = "Anyo"
+        Me.Anyo.HeaderText = "Anyo"
+        Me.Anyo.Name = "Anyo"
+        '
+        'Director
+        '
+        Me.Director.DataPropertyName = "Director"
+        Me.Director.HeaderText = "Director"
+        Me.Director.Name = "Director"
+        '
+        'CodGenero
+        '
+        Me.CodGenero.DataPropertyName = "CodGenero"
+        Me.CodGenero.HeaderText = "CodGenero"
+        Me.CodGenero.Name = "CodGenero"
+        '
+        'PeliculasBindingSource
+        '
+        Me.PeliculasBindingSource.DataMember = "Peliculas"
+        Me.PeliculasBindingSource.DataSource = Me.EMPRESADataSetBindingSource
         '
         'EMPRESADataSetBindingSource
         '
         Me.EMPRESADataSetBindingSource.DataSource = Me.EMPRESADataSet
         Me.EMPRESADataSetBindingSource.Position = 0
+        '
+        'EMPRESADataSet
+        '
+        Me.EMPRESADataSet.DataSetName = "EMPRESADataSet"
+        Me.EMPRESADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ClientesBindingSource
         '
@@ -94,11 +138,6 @@ Partial Class GestionPeliculas
         'FacturasTableAdapter
         '
         Me.FacturasTableAdapter.ClearBeforeFill = True
-        '
-        'PeliculasBindingSource
-        '
-        Me.PeliculasBindingSource.DataMember = "Peliculas"
-        Me.PeliculasBindingSource.DataSource = Me.EMPRESADataSetBindingSource
         '
         'PeliculasTableAdapter
         '
@@ -140,40 +179,106 @@ Partial Class GestionPeliculas
         Me.btnPelisCrear.Text = "Crear Pelicula"
         Me.btnPelisCrear.UseVisualStyleBackColor = True
         '
-        'Titulo
-        '
-        Me.Titulo.DataPropertyName = "Titulo"
-        Me.Titulo.HeaderText = "Titulo"
-        Me.Titulo.Name = "Titulo"
-        '
-        'Anyo
-        '
-        Me.Anyo.DataPropertyName = "Anyo"
-        Me.Anyo.HeaderText = "Anyo"
-        Me.Anyo.Name = "Anyo"
-        '
-        'Director
-        '
-        Me.Director.DataPropertyName = "Director"
-        Me.Director.HeaderText = "Director"
-        Me.Director.Name = "Director"
-        '
-        'CodGenero
-        '
-        Me.CodGenero.DataPropertyName = "CodGenero"
-        Me.CodGenero.HeaderText = "CodGenero"
-        Me.CodGenero.Name = "CodGenero"
-        '
         'EmpresaDataSet1
         '
         Me.EmpresaDataSet1.DataSetName = "EMPRESADataSet"
         Me.EmpresaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'PeliculaIdDataGridViewTextBoxColumn
+        '
+        Me.PeliculaIdDataGridViewTextBoxColumn.DataPropertyName = "PeliculaId"
+        Me.PeliculaIdDataGridViewTextBoxColumn.HeaderText = "PeliculaId"
+        Me.PeliculaIdDataGridViewTextBoxColumn.Name = "PeliculaIdDataGridViewTextBoxColumn"
+        '
+        'TituloDataGridViewTextBoxColumn
+        '
+        Me.TituloDataGridViewTextBoxColumn.DataPropertyName = "Titulo"
+        Me.TituloDataGridViewTextBoxColumn.HeaderText = "Titulo"
+        Me.TituloDataGridViewTextBoxColumn.Name = "TituloDataGridViewTextBoxColumn"
+        '
+        'DuracionDataGridViewTextBoxColumn
+        '
+        Me.DuracionDataGridViewTextBoxColumn.DataPropertyName = "Duracion"
+        Me.DuracionDataGridViewTextBoxColumn.HeaderText = "Duracion"
+        Me.DuracionDataGridViewTextBoxColumn.Name = "DuracionDataGridViewTextBoxColumn"
+        '
+        'CodGeneroDataGridViewTextBoxColumn
+        '
+        Me.CodGeneroDataGridViewTextBoxColumn.DataPropertyName = "CodGenero"
+        Me.CodGeneroDataGridViewTextBoxColumn.HeaderText = "CodGenero"
+        Me.CodGeneroDataGridViewTextBoxColumn.Name = "CodGeneroDataGridViewTextBoxColumn"
+        '
+        'AnyoDataGridViewTextBoxColumn
+        '
+        Me.AnyoDataGridViewTextBoxColumn.DataPropertyName = "Anyo"
+        Me.AnyoDataGridViewTextBoxColumn.HeaderText = "Anyo"
+        Me.AnyoDataGridViewTextBoxColumn.Name = "AnyoDataGridViewTextBoxColumn"
+        '
+        'ProductoraDataGridViewTextBoxColumn
+        '
+        Me.ProductoraDataGridViewTextBoxColumn.DataPropertyName = "Productora"
+        Me.ProductoraDataGridViewTextBoxColumn.HeaderText = "Productora"
+        Me.ProductoraDataGridViewTextBoxColumn.Name = "ProductoraDataGridViewTextBoxColumn"
+        '
+        'PaisDataGridViewTextBoxColumn
+        '
+        Me.PaisDataGridViewTextBoxColumn.DataPropertyName = "Pais"
+        Me.PaisDataGridViewTextBoxColumn.HeaderText = "Pais"
+        Me.PaisDataGridViewTextBoxColumn.Name = "PaisDataGridViewTextBoxColumn"
+        '
+        'PrecioDataGridViewTextBoxColumn
+        '
+        Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "Precio"
+        Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
+        Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
+        '
+        'DirectorDataGridViewTextBoxColumn
+        '
+        Me.DirectorDataGridViewTextBoxColumn.DataPropertyName = "Director"
+        Me.DirectorDataGridViewTextBoxColumn.HeaderText = "Director"
+        Me.DirectorDataGridViewTextBoxColumn.Name = "DirectorDataGridViewTextBoxColumn"
+        '
+        'FechaIniDataGridViewTextBoxColumn
+        '
+        Me.FechaIniDataGridViewTextBoxColumn.DataPropertyName = "FechaIni"
+        Me.FechaIniDataGridViewTextBoxColumn.HeaderText = "FechaIni"
+        Me.FechaIniDataGridViewTextBoxColumn.Name = "FechaIniDataGridViewTextBoxColumn"
+        '
+        'FechaFinDataGridViewTextBoxColumn
+        '
+        Me.FechaFinDataGridViewTextBoxColumn.DataPropertyName = "FechaFin"
+        Me.FechaFinDataGridViewTextBoxColumn.HeaderText = "FechaFin"
+        Me.FechaFinDataGridViewTextBoxColumn.Name = "FechaFinDataGridViewTextBoxColumn"
+        '
+        'PrecioCompraDataGridViewTextBoxColumn
+        '
+        Me.PrecioCompraDataGridViewTextBoxColumn.DataPropertyName = "PrecioCompra"
+        Me.PrecioCompraDataGridViewTextBoxColumn.HeaderText = "PrecioCompra"
+        Me.PrecioCompraDataGridViewTextBoxColumn.Name = "PrecioCompraDataGridViewTextBoxColumn"
+        '
+        'PrecioAlquilerDataGridViewTextBoxColumn
+        '
+        Me.PrecioAlquilerDataGridViewTextBoxColumn.DataPropertyName = "PrecioAlquiler"
+        Me.PrecioAlquilerDataGridViewTextBoxColumn.HeaderText = "PrecioAlquiler"
+        Me.PrecioAlquilerDataGridViewTextBoxColumn.Name = "PrecioAlquilerDataGridViewTextBoxColumn"
+        '
+        'PrecioProveedorDataGridViewTextBoxColumn
+        '
+        Me.PrecioProveedorDataGridViewTextBoxColumn.DataPropertyName = "PrecioProveedor"
+        Me.PrecioProveedorDataGridViewTextBoxColumn.HeaderText = "PrecioProveedor"
+        Me.PrecioProveedorDataGridViewTextBoxColumn.Name = "PrecioProveedorDataGridViewTextBoxColumn"
+        '
+        'ExclusividadDataGridViewCheckBoxColumn
+        '
+        Me.ExclusividadDataGridViewCheckBoxColumn.DataPropertyName = "Exclusividad"
+        Me.ExclusividadDataGridViewCheckBoxColumn.HeaderText = "Exclusividad"
+        Me.ExclusividadDataGridViewCheckBoxColumn.Name = "ExclusividadDataGridViewCheckBoxColumn"
+        '
         'GestionPeliculas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(805, 450)
         Me.Controls.Add(Me.btnPelisCrear)
         Me.Controls.Add(Me.btnPelisBaja)
         Me.Controls.Add(Me.btnPelisModificar)
@@ -182,11 +287,11 @@ Partial Class GestionPeliculas
         Me.Name = "GestionPeliculas"
         Me.Text = "GestionPeliculas"
         CType(Me.gridViewPelis, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EMPRESADataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PeliculasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EMPRESADataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EMPRESADataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FacturasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PeliculasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -210,4 +315,19 @@ Partial Class GestionPeliculas
     Friend WithEvents Director As DataGridViewTextBoxColumn
     Friend WithEvents CodGenero As DataGridViewTextBoxColumn
     Friend WithEvents EmpresaDataSet1 As EMPRESADataSet
+    Friend WithEvents PeliculaIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TituloDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DuracionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CodGeneroDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AnyoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProductoraDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PaisDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DirectorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FechaIniDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FechaFinDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioCompraDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioAlquilerDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioProveedorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ExclusividadDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
 End Class
