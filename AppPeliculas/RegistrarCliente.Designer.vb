@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class RegistrarUsuario
+Partial Class RegistrarCliente
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,14 +22,14 @@ Partial Class RegistrarUsuario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.BtnUpdateUsuario = New System.Windows.Forms.Button()
+        Me.BtnRegistrarUsuario = New System.Windows.Forms.Button()
         Me.ComboMunicipio = New System.Windows.Forms.ComboBox()
         Me.LblMunicipio = New System.Windows.Forms.Label()
-        Me.UpdatePasswordGroup = New System.Windows.Forms.GroupBox()
-        Me.UpdatePasswordTest = New System.Windows.Forms.TextBox()
+        Me.PasswordGroup = New System.Windows.Forms.GroupBox()
+        Me.PasswordTest = New System.Windows.Forms.TextBox()
         Me.LblPassword = New System.Windows.Forms.Label()
         Me.LblPasswordTest = New System.Windows.Forms.Label()
-        Me.UpdatePassword = New System.Windows.Forms.TextBox()
+        Me.Password = New System.Windows.Forms.TextBox()
         Me.ComboProvincia = New System.Windows.Forms.ComboBox()
         Me.LblProvincia = New System.Windows.Forms.Label()
         Me.TextCP = New System.Windows.Forms.TextBox()
@@ -42,18 +42,18 @@ Partial Class RegistrarUsuario
         Me.LblApellido1 = New System.Windows.Forms.Label()
         Me.TextNombre = New System.Windows.Forms.TextBox()
         Me.LblNombre = New System.Windows.Forms.Label()
-        Me.UpdatePasswordGroup.SuspendLayout()
+        Me.PasswordGroup.SuspendLayout()
         Me.SuspendLayout()
         '
-        'BtnUpdateUsuario
+        'BtnRegistrarUsuario
         '
-        Me.BtnUpdateUsuario.AutoSize = True
-        Me.BtnUpdateUsuario.Location = New System.Drawing.Point(96, 326)
-        Me.BtnUpdateUsuario.Name = "BtnUpdateUsuario"
-        Me.BtnUpdateUsuario.Size = New System.Drawing.Size(121, 23)
-        Me.BtnUpdateUsuario.TabIndex = 37
-        Me.BtnUpdateUsuario.Text = "Registrar"
-        Me.BtnUpdateUsuario.UseVisualStyleBackColor = True
+        Me.BtnRegistrarUsuario.AutoSize = True
+        Me.BtnRegistrarUsuario.Location = New System.Drawing.Point(96, 326)
+        Me.BtnRegistrarUsuario.Name = "BtnRegistrarUsuario"
+        Me.BtnRegistrarUsuario.Size = New System.Drawing.Size(121, 23)
+        Me.BtnRegistrarUsuario.TabIndex = 37
+        Me.BtnRegistrarUsuario.Text = "Registrar"
+        Me.BtnRegistrarUsuario.UseVisualStyleBackColor = True
         '
         'ComboMunicipio
         '
@@ -72,25 +72,24 @@ Partial Class RegistrarUsuario
         Me.LblMunicipio.TabIndex = 35
         Me.LblMunicipio.Text = "Municipio: "
         '
-        'UpdatePasswordGroup
+        'PasswordGroup
         '
-        Me.UpdatePasswordGroup.Controls.Add(Me.UpdatePasswordTest)
-        Me.UpdatePasswordGroup.Controls.Add(Me.LblPassword)
-        Me.UpdatePasswordGroup.Controls.Add(Me.LblPasswordTest)
-        Me.UpdatePasswordGroup.Controls.Add(Me.UpdatePassword)
-        Me.UpdatePasswordGroup.Location = New System.Drawing.Point(15, 217)
-        Me.UpdatePasswordGroup.Name = "UpdatePasswordGroup"
-        Me.UpdatePasswordGroup.Size = New System.Drawing.Size(300, 83)
-        Me.UpdatePasswordGroup.TabIndex = 34
-        Me.UpdatePasswordGroup.TabStop = False
-        Me.UpdatePasswordGroup.Visible = False
+        Me.PasswordGroup.Controls.Add(Me.PasswordTest)
+        Me.PasswordGroup.Controls.Add(Me.LblPassword)
+        Me.PasswordGroup.Controls.Add(Me.LblPasswordTest)
+        Me.PasswordGroup.Controls.Add(Me.Password)
+        Me.PasswordGroup.Location = New System.Drawing.Point(15, 217)
+        Me.PasswordGroup.Name = "PasswordGroup"
+        Me.PasswordGroup.Size = New System.Drawing.Size(300, 83)
+        Me.PasswordGroup.TabIndex = 34
+        Me.PasswordGroup.TabStop = False
         '
-        'UpdatePasswordTest
+        'PasswordTest
         '
-        Me.UpdatePasswordTest.Location = New System.Drawing.Point(131, 45)
-        Me.UpdatePasswordTest.Name = "UpdatePasswordTest"
-        Me.UpdatePasswordTest.Size = New System.Drawing.Size(150, 20)
-        Me.UpdatePasswordTest.TabIndex = 16
+        Me.PasswordTest.Location = New System.Drawing.Point(131, 45)
+        Me.PasswordTest.Name = "PasswordTest"
+        Me.PasswordTest.Size = New System.Drawing.Size(150, 20)
+        Me.PasswordTest.TabIndex = 16
         '
         'LblPassword
         '
@@ -110,12 +109,12 @@ Partial Class RegistrarUsuario
         Me.LblPasswordTest.TabIndex = 15
         Me.LblPasswordTest.Text = "Confirmar contraseña: "
         '
-        'UpdatePassword
+        'Password
         '
-        Me.UpdatePassword.Location = New System.Drawing.Point(131, 19)
-        Me.UpdatePassword.Name = "UpdatePassword"
-        Me.UpdatePassword.Size = New System.Drawing.Size(150, 20)
-        Me.UpdatePassword.TabIndex = 11
+        Me.Password.Location = New System.Drawing.Point(131, 19)
+        Me.Password.Name = "Password"
+        Me.Password.Size = New System.Drawing.Size(150, 20)
+        Me.Password.TabIndex = 11
         '
         'ComboProvincia
         '
@@ -219,10 +218,10 @@ Partial Class RegistrarUsuario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(334, 361)
-        Me.Controls.Add(Me.BtnUpdateUsuario)
+        Me.Controls.Add(Me.BtnRegistrarUsuario)
         Me.Controls.Add(Me.ComboMunicipio)
         Me.Controls.Add(Me.LblMunicipio)
-        Me.Controls.Add(Me.UpdatePasswordGroup)
+        Me.Controls.Add(Me.PasswordGroup)
         Me.Controls.Add(Me.ComboProvincia)
         Me.Controls.Add(Me.LblProvincia)
         Me.Controls.Add(Me.TextCP)
@@ -237,22 +236,22 @@ Partial Class RegistrarUsuario
         Me.Controls.Add(Me.LblNombre)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "RegistrarUsuario"
-        Me.Text = "RegistrarUsuario"
-        Me.UpdatePasswordGroup.ResumeLayout(False)
-        Me.UpdatePasswordGroup.PerformLayout()
+        Me.Text = "Registrar Usuario"
+        Me.PasswordGroup.ResumeLayout(False)
+        Me.PasswordGroup.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents BtnUpdateUsuario As Button
+    Friend WithEvents BtnRegistrarUsuario As Button
     Friend WithEvents ComboMunicipio As ComboBox
     Friend WithEvents LblMunicipio As Label
-    Friend WithEvents UpdatePasswordGroup As GroupBox
-    Friend WithEvents UpdatePasswordTest As TextBox
+    Friend WithEvents PasswordGroup As GroupBox
+    Friend WithEvents PasswordTest As TextBox
     Friend WithEvents LblPassword As Label
     Friend WithEvents LblPasswordTest As Label
-    Friend WithEvents UpdatePassword As TextBox
+    Friend WithEvents Password As TextBox
     Friend WithEvents ComboProvincia As ComboBox
     Friend WithEvents LblProvincia As Label
     Friend WithEvents TextCP As TextBox

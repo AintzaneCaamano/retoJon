@@ -79,10 +79,16 @@
     <Compile Include="AltaPelis.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionUsuarios.Designer.vb">
-      <DependentUpon>GestionUsuarios.vb</DependentUpon>
+    <Compile Include="DetallesCliente.Designer.vb">
+      <DependentUpon>DetallesCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="GestionUsuarios.vb">
+    <Compile Include="DetallesCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionClientes.Designer.vb">
+      <DependentUpon>GestionClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestionClientes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModificarPelis.Designer.vb">
@@ -91,31 +97,28 @@
     <Compile Include="ModificarPelis.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Municipio.vb" />
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarUsuario.Designer.vb">
-      <DependentUpon>RegistrarUsuario.vb</DependentUpon>
+    <Compile Include="Provincia.vb" />
+    <Compile Include="RegistrarCliente.Designer.vb">
+      <DependentUpon>RegistrarCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarUsuario.vb">
+    <Compile Include="RegistrarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateUsuario.Designer.vb">
-      <DependentUpon>UpdateUsuario.vb</DependentUpon>
+    <Compile Include="UpdateCliente.Designer.vb">
+      <DependentUpon>UpdateCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="UpdateUsuario.vb">
+    <Compile Include="UpdateCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios.vb" />
+    <Compile Include="Cliente.vb" />
     <Compile Include="Peliculas.vb" />
-    <Compile Include="EMPRESADataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EMPRESADataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="GestionPeliculas.Designer.vb">
       <DependentUpon>GestionPeliculas.vb</DependentUpon>
     </Compile>
@@ -146,8 +149,8 @@
     <EmbeddedResource Include="GestionPeliculas.resx">
       <DependentUpon>GestionPeliculas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionUsuarios.resx">
-      <DependentUpon>GestionUsuarios.vb</DependentUpon>
+    <EmbeddedResource Include="GestionClientes.resx">
+      <DependentUpon>GestionClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarPelis.resx">
       <DependentUpon>ModificarPelis.vb</DependentUpon>
@@ -161,25 +164,14 @@
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarUsuario.resx">
-      <DependentUpon>RegistrarUsuario.vb</DependentUpon>
+    <EmbeddedResource Include="RegistrarCliente.resx">
+      <DependentUpon>RegistrarCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateUsuario.resx">
-      <DependentUpon>UpdateUsuario.vb</DependentUpon>
+    <EmbeddedResource Include="UpdateCliente.resx">
+      <DependentUpon>UpdateCliente.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="EMPRESADataSet.xsc">
-      <DependentUpon>EMPRESADataSet.xsd</DependentUpon>
-    </None>
-    <None Include="EMPRESADataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>EMPRESADataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="EMPRESADataSet.xss">
-      <DependentUpon>EMPRESADataSet.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -195,6 +187,9 @@
     <Content Include="EMPRESA.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

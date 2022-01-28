@@ -1,13 +1,13 @@
-Public Class UpdateUsuario
+Public Class UpdateCliente
     Dim cnnString As String = My.Settings.EMPRESAConnectionString
 
-    Private _idCliente As Integer
-    Public Property IdCliente() As Integer
+    Private _cliente As DataGridViewRow
+    Public Property Cliente() As DataGridViewRow
         Get
-            Return _idCliente
+            Return _cliente
         End Get
-        Set(ByVal value As Integer)
-            _idCliente = value
+        Set(ByVal value As DataGridViewRow)
+            _cliente = value
         End Set
     End Property
 
@@ -31,13 +31,13 @@ Public Class UpdateUsuario
         End Set
     End Property
 
-    Public Sub New(idCliente As Integer)
+    Public Sub New(dr As DataGridViewRow)
 
         InitializeComponent()
+        _cliente = dr
+        Dim idCliente As Integer = _cliente.Cells.Item(0).Value
 
         Dim cnnDB As OleDb.OleDbConnection = New OleDb.OleDbConnection(cnnString)
-
-        Me._idCliente = idCliente
 
         Try
             cnnDB.Open()
@@ -205,6 +205,7 @@ Public Class UpdateUsuario
 
     Private Sub BtnUpdateUsuario_Click(sender As Object, e As EventArgs) Handles BtnUpdateUsuario.Click
         Dim cnnDB As OleDb.OleDbConnection = New OleDb.OleDbConnection(cnnString)
+        Dim idCliente As Integer = _cliente.Cells.Item(0).Value
 
         Try
             cnnDB.Open()
@@ -243,7 +244,7 @@ Public Class UpdateUsuario
 
                     Sql += $" WHERE [ClienteId] = @ClienteId"
 
-                    cmd.Parameters.AddWithValue("@ClienteId", Me.IdCliente).OleDbType = OleDb.OleDbType.Integer
+                    cmd.Parameters.AddWithValue("@ClienteId", idCliente).OleDbType = OleDb.OleDbType.Integer
                     cmd.CommandText = Sql
 
 
@@ -251,7 +252,12 @@ Public Class UpdateUsuario
 
                         If cmd.ExecuteNonQuery() > 0 Then
                             MessageBox.Show("Datos actualizados correctamente", "Resultado")
-                            GestionUsuarios.CargarDatosClientes()
+
+                            _cliente.Cells.Item(1).Value = TextNombre.Text
+                            _cliente.Cells.Item(2).Value = TextApellido1.Text
+                            _cliente.Cells.Item(3).Value = TextApellido2.Text
+                            _cliente.Cells.Item(4).Value = ComboMunicipio.Text
+
                             Me.Dispose()
                         Else
                             MessageBox.Show("Error al actualizar", "Resultado")

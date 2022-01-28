@@ -1,12 +1,12 @@
 ﻿Public Class Principal
 
-    Private _formUsuarios As GestionUsuarios
-    Public Property FormUsuarios() As GestionUsuarios
+    Private _formClientes As GestionClientes
+    Public Property FormUsuarios() As GestionClientes
         Get
-            Return _formUsuarios
+            Return _formClientes
         End Get
-        Set(ByVal value As GestionUsuarios)
-            _formUsuarios = value
+        Set(ByVal value As GestionClientes)
+            _formClientes = value
         End Set
     End Property
 
@@ -25,12 +25,16 @@
     End Sub
 
     Private Sub BtnFormUsuarios_Click(sender As Object, e As EventArgs) Handles BtnFormUsuarios.Click
-        _formUsuarios = New GestionUsuarios()
-        _formUsuarios.Show()
+        _formClientes = New GestionClientes()
+        Me.Hide()
+        _formClientes.ShowDialog()
+        Me.Show()
     End Sub
     Private Sub BtnFormPeliculas_Click(sender As Object, e As EventArgs) Handles BtnFormPeliculas.Click
         _formPeliculas = New GestionPeliculas()
-        _formPeliculas.Show()
+        Me.Hide()
+        _formPeliculas.ShowDialog()
+        Me.Show()
     End Sub
 
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click

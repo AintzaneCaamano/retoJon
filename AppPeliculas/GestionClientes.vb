@@ -1,29 +1,38 @@
-Public Class GestionUsuarios
+Public Class GestionClientes
 
     Dim cnnString As String = My.Settings.EMPRESAConnectionString
 
-    Private _formUpdateUsuario As UpdateUsuario
-    Public Property FormUpdateUsuario() As UpdateUsuario
+    Private _formDetallesCliente As DetallesCliente
+    Public Property FormDetallesCliente() As DetallesCliente
         Get
-            Return _formUpdateUsuario
+            Return _formDetallesCliente
         End Get
-        Set(ByVal value As UpdateUsuario)
-            _formUpdateUsuario = value
+        Set(ByVal value As DetallesCliente)
+            _formDetallesCliente = value
         End Set
     End Property
 
-    Private _formRegistrarUsuario As RegistrarUsuario
-    Public Property FormRegistrarUsuario() As RegistrarUsuario
+    Private _formUpdateCliente As UpdateCliente
+    Public Property FormUpdateCliente() As UpdateCliente
         Get
-            Return _formRegistrarUsuario
+            Return _formUpdateCliente
         End Get
-        Set(ByVal value As RegistrarUsuario)
-            _formRegistrarUsuario = value
+        Set(ByVal value As UpdateCliente)
+            _formUpdateCliente = value
+        End Set
+    End Property
+
+    Private _formRegistrarCliente As RegistrarCliente
+    Public Property FormRegistrarCliente() As RegistrarCliente
+        Get
+            Return _formRegistrarCliente
+        End Get
+        Set(ByVal value As RegistrarCliente)
+            _formRegistrarCliente = value
         End Set
     End Property
 
     Private Sub GestionUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         CargarDatosClientes()
 
     End Sub
@@ -44,9 +53,9 @@ Public Class GestionUsuarios
                     Try
 
                         Dim dt As DataTable = New DataTable()
-                        Dim adapter As OleDb.OleDbDataAdapter = New OleDb.OleDbDataAdapter(cmd)
-
-                        adapter.Fill(dt)
+                        Using adapter As OleDb.OleDbDataAdapter = New OleDb.OleDbDataAdapter(cmd)
+                            adapter.Fill(dt)
+                        End Using
 
                         GridUsuarios.DataSource = dt
                         GridUsuarios.Refresh()
@@ -85,7 +94,7 @@ Public Class GestionUsuarios
 
                     Try
 
-                        Dim sql As String = $"SELECT ClienteId, Nombre, Apellido1, Apellido2, Direccion, CP, EsBaja, Password FROM Clientes WHERE ClienteId = {idCliente}"
+                        Dim sql As String = $"SELECT ClienteId, Clientes.Nombre AS NombreCliente, Apellido1, Apellido2, Direccion, CP, EsBaja, Password, Municipios.Nombre AS NombreMunicipio FROM Clientes INNER JOIN Municipios ON Clientes.MunId = Municipios.MunId WHERE ClienteId = {idCliente}"
                         Dim cmd As OleDb.OleDbCommand = New OleDb.OleDbCommand(sql, cnnDB)
 
                         Try
@@ -95,11 +104,26 @@ Public Class GestionUsuarios
 
                             adapter.Fill(dt)
 
+                            Dim cliente As Cliente = New Cliente()
+
                             For Each row As DataRow In dt.Rows
+                                Dim municipio As Municipio = New Municipio()
 
-                                MessageBox.Show($"Id: {row.Field(Of Integer)("ClienteId")} {Environment.NewLine}Nombre: {row.Field(Of String)("Nombre")} {Environment.NewLine}1er Apellido: {row.Field(Of String)("Apellido1")} {Environment.NewLine}2do Apellido: {row.Field(Of String)("Apellido2")} {Environment.NewLine}Dirección: {row.Field(Of String)("Direccion")} {Environment.NewLine}CodPostal: {row.Field(Of String)("CP")} {Environment.NewLine}Baja: {row.Field(Of Boolean)("EsBaja")} {Environment.NewLine}Contraseña: {row.Field(Of String)("Password")}")
+                                cliente.Id = row.Field(Of Integer)("ClienteId")
+                                cliente.Nombre = row.Field(Of String)("NombreCliente")
+                                cliente.Apellido1 = row.Field(Of String)("Apellido1")
+                                cliente.Apellido2 = row.Field(Of String)("Apellido2")
+                                cliente.Direccion = row.Field(Of String)("Direccion")
+                                cliente.Cp = row.Field(Of String)("CP")
+                                cliente.Password = row.Field(Of String)("Password")
+                                cliente.EsBaja = row.Field(Of Boolean)("EsBaja")
 
+                                municipio.Nombre = row.Field(Of String)("NombreMunicipio")
+
+                                cliente.Municipio = municipio
                             Next
+
+
 
                         Catch ex As Exception
 
@@ -164,10 +188,13 @@ Public Class GestionUsuarios
     End Sub
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         Try
-            Dim idCliente = GridUsuarios.Rows.Item(GridUsuarios.SelectedCells.Item(0).RowIndex).Cells.Item("ClienteId").Value
 
-            _formUpdateUsuario = New UpdateUsuario(idCliente)
-            _formUpdateUsuario.Show()
+            _formUpdateCliente = New UpdateCliente(GridUsuarios.Rows.Item(GridUsuarios.SelectedCells.Item(0).RowIndex))
+            Me.Hide()
+            _formUpdateCliente.ShowDialog()
+            Me.Show()
+
+            GridUsuarios.Refresh()
         Catch ex As ArgumentOutOfRangeException
             MessageBox.Show("Selecciona un registro para poder modificarlo", "Aviso")
         End Try
@@ -177,8 +204,12 @@ Public Class GestionUsuarios
         Try
             Dim idCliente = GridUsuarios.Rows.Item(GridUsuarios.SelectedCells.Item(0).RowIndex).Cells.Item("ClienteId").Value
 
-            _formRegistrarUsuario = New RegistrarUsuario()
-            _formRegistrarUsuario.Show()
+            _formRegistrarCliente = New RegistrarCliente()
+            Me.Hide()
+            _formRegistrarCliente.ShowDialog()
+            Me.Show()
+
+            GridUsuarios.Refresh()
         Catch ex As ArgumentOutOfRangeException
             MessageBox.Show("Selecciona un registro para poder modificarlo", "Aviso")
         End Try

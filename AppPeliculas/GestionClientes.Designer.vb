@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class GestionUsuarios
+Partial Class GestionClientes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -85,7 +85,7 @@ Partial Class GestionUsuarios
         Me.BtnRegistrar.Text = "Añadir Cliente"
         Me.BtnRegistrar.UseVisualStyleBackColor = True
         '
-        'GestionUsuarios
+        'GestionClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -95,7 +95,7 @@ Partial Class GestionUsuarios
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnDetalles)
         Me.Controls.Add(Me.GridUsuarios)
-        Me.Name = "GestionUsuarios"
+        Me.Name = "GestionClientes"
         Me.Text = "GestionUsuarios"
         CType(Me.GridUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
