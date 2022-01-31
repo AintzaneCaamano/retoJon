@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8BBB2974-E317-4668-A3F6-0DFC044FA876}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>AppPeliculas.My.MyApplication</StartupObject>
+    <StartupObject>AppPeliculas.Principal</StartupObject>
     <RootNamespace>AppPeliculas</RootNamespace>
     <AssemblyName>AppPeliculas</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -46,6 +46,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icono.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -187,6 +190,7 @@
     <Content Include="EMPRESA.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icono.ico" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

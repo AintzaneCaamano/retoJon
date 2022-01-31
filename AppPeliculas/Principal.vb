@@ -1,44 +1,27 @@
 ﻿Public Class Principal
-
-    Private _formClientes As GestionClientes
-    Public Property FormUsuarios() As GestionClientes
-        Get
-            Return _formClientes
-        End Get
-        Set(ByVal value As GestionClientes)
-            _formClientes = value
-        End Set
-    End Property
-
-    Private _formPeliculas As GestionPeliculas
-    Public Property FormPeliculas() As GestionPeliculas
-        Get
-            Return _formPeliculas
-        End Get
-        Set(ByVal value As GestionPeliculas)
-            _formPeliculas = value
-        End Set
-    End Property
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 
-    Private Sub BtnFormUsuarios_Click(sender As Object, e As EventArgs) Handles BtnFormUsuarios.Click
-        _formClientes = New GestionClientes()
-        Me.Hide()
-        _formClientes.ShowDialog()
-        Me.Show()
-    End Sub
-    Private Sub BtnFormPeliculas_Click(sender As Object, e As EventArgs) Handles BtnFormPeliculas.Click
-        _formPeliculas = New GestionPeliculas()
-        Me.Hide()
-        _formPeliculas.ShowDialog()
-        Me.Show()
-    End Sub
+    Private Sub OpenMenuOption(sender As Object, e As EventArgs) Handles BtnFormClientes.Click, BtnFormPeliculas.Click, BtnSalir.Click
+        Dim selectedForm As Form = Nothing
 
-    Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
-        Me.Dispose()
+        Dim caller As String = CType(sender, Button).Name
+
+        Select Case caller
+            Case "BtnFormClientes"
+                selectedForm = New GestionClientes()
+            Case "BtnFormPeliculas"
+                selectedForm = New GestionPeliculas()
+            Case "BtnSalir"
+                Me.Dispose()
+        End Select
+
+        If Not IsNothing(selectedForm) Then
+            Me.Hide()
+            selectedForm.ShowDialog()
+            Me.Show()
+        End If
     End Sub
 
     Private Sub Principal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

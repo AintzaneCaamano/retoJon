@@ -65,7 +65,7 @@ Partial Class ModificarPelis
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(370, 23)
         Me.btnGuardar.TabIndex = 34
-        Me.btnGuardar.Text = "Dar de Alta"
+        Me.btnGuardar.Text = "Modificar Pelicula"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'TextBtxtBoxDirector

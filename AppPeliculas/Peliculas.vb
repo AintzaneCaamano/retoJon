@@ -1,5 +1,15 @@
 ﻿Public Class Peliculas
     ' una prueba desde VS 
+    Private _id As Integer
+    Public Property Id() As Integer
+        Get
+            Return _id
+        End Get
+        Set(ByVal value As Integer)
+            _id = value
+        End Set
+    End Property
+
     Private _titulo As String
     Public Property titulo() As String
         Get
@@ -20,12 +30,12 @@
         End Set
     End Property
 
-    Private _anyo As Integer
-    Public Property anyo() As Integer
+    Private _anyo As String
+    Public Property anyo() As String
         Get
             Return _anyo
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             _anyo = value
         End Set
     End Property
@@ -51,12 +61,12 @@
         End Set
     End Property
 
-    Private _precio As Integer
-    Public Property precio() As Integer
+    Private _precio As Double
+    Public Property precio() As Double
         Get
             Return _precio
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Double)
             _precio = value
         End Set
     End Property

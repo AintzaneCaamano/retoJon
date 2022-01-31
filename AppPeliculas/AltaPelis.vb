@@ -14,8 +14,8 @@ Public Class AltaPelis
     Dim id As Integer
 
 
-
-    Private Sub AltaPelis_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub New()
+        InitializeComponent()
         rellenarGeneros()
         peli = New Peliculas()
     End Sub
@@ -72,13 +72,14 @@ Public Class AltaPelis
                 peli.precio = 12
             End If
 
-            peli.genero = Me.ComboBoxGeneros.SelectedIndex
+            peli.genero = ComboBoxGeneros.SelectedValue
 
             guardarPeli()
 
         Else
             MessageBox.Show("El título es obligatorio, debe contener entre 3 y 255 caracteres")
         End If
+
     End Sub
 
     Private Sub actualizarId()
@@ -95,10 +96,8 @@ Public Class AltaPelis
                     Dim cmd As OleDb.OleDbCommand = New OleDb.OleDbCommand(sql, cnnDB)
 
                     Try
-                        Dim idMax As Integer = cmd.ExecuteScalar()
-                        Dim str As String = "algo"
 
-                        'id = dt.GetValue(0)
+                        peli.Id = cmd.ExecuteScalar() + 1
 
                     Catch ex As Exception
 
@@ -134,10 +133,10 @@ Public Class AltaPelis
                         'id = cmd.ExecuteNonQuery() + 1
 
                         'Dim Sql = String.Format("INSERT into Peliculas (PeliculaId, Titulo, Duracion, CodGenero, Anyo, Productora, Pais, Precio, Director) VALUES ({0}, {1}, {2}, {3}. {4}, {5}, {6}, {7}, {8});", id, peli.titulo, peli.duracion, peli.anyo, peli.productora, peli.pais, peli.precio, peli.director)
-                        Dim Sql = "INSERT into Peliculas (PeliculaId, Titulo, Duracion, CodGenero, Anyo, Productora, Pais, Precio, Director) VALUES (@PeliculaId, @Titulo, @Duracion, @CodGenero, @Anyo, @Productora, @Pais, @Precio, @Director)"
+                        Dim Sql = "INSERT into Peliculas ([PeliculaId], [Titulo], [Duracion], [CodGenero], [Anyo], [Productora], [Pais], [Precio], [Director]) VALUES (@PeliculaId, @Titulo, @Duracion, @CodGenero, @Anyo, @Productora, @Pais, @Precio, @Director)"
                         Dim cmd As OleDb.OleDbCommand = New OleDb.OleDbCommand(Sql, cnnDB)
 
-                        cmd.Parameters.AddWithValue("@PeliculaId", id)
+                        cmd.Parameters.AddWithValue("@PeliculaId", peli.Id)
                         cmd.Parameters.AddWithValue("@Titulo", peli.titulo)
                         cmd.Parameters.AddWithValue("@Duracion", peli.duracion)
                         cmd.Parameters.AddWithValue("@CodGenero", peli.genero)
@@ -148,8 +147,14 @@ Public Class AltaPelis
                         cmd.Parameters.AddWithValue("@Director", peli.director)
 
 
-                        Dim num = cmd.ExecuteNonQuery()
-                        Dim str As String = "algo"
+                        If cmd.ExecuteNonQuery() > 0 Then
+                            MessageBox.Show("Pelicula insertada correctamente", "Resultado")
+
+                            GestionPeliculas.gridViewPelis.Rows.Add(peli.Id, peli.titulo, peli.anyo, peli.director, ComboBoxGeneros.Text)
+
+                        Else
+                            MessageBox.Show("Error al insertar", "Resultado")
+                        End If
 
                     Catch ex As Exception
 
@@ -166,7 +171,6 @@ Public Class AltaPelis
         Catch ex As Exception
 
         End Try
-        GestionPeliculas.loadData()
     End Sub
 
     Function comprobarLongitud(minimo As Integer, maximo As Integer, text As String) As Boolean
@@ -204,19 +208,45 @@ Public Class AltaPelis
 
                     Try
 
-                        Dim dataReader As OleDbDataReader = cmd.ExecuteReader()
+                        ' Dim dataReader As OleDbDataReader = cmd.ExecuteReader()
 
 
-                        While dataReader.Read()
+                        'While dataReader.Read()
 
-                            Me.ComboBoxGeneros.Items.Add(dataReader.Item(0))
+                        'Me.ComboBoxGeneros.Items.Add(dataReader.Item(0))
 
-                        End While
+                        'End While
 
-                        ' Dim dic As New Dictionary(Of Integer, String)
-                        '  Me.ComboBoxGeneros.DataSource = dic
-                        '  Me.ComboBoxGeneros.ValueMember = "Key"
-                        ' Me.ComboBoxGeneros.DisplayMember = "Value"
+                        'Dim dic As New Dictionary(Of Integer, String)
+                        'Me.ComboBoxGeneros.DataSource = dic
+                        'Me.ComboBoxGeneros.ValueMember = "Key"
+                        'Me.ComboBoxGeneros.DisplayMember = "Value"
+                        'NameOf(variable)
+
+                        '*******
+                        Dim dt As DataTable = New DataTable()
+                        Dim adapter As OleDb.OleDbDataAdapter = New OleDb.OleDbDataAdapter(cmd)
+                        Dim selectedIndex As Integer = 0
+
+                        adapter.Fill(dt)
+
+                        For i = 0 To dt.Rows.Count - 1
+                            If dt.Rows.Item(i).Item(0) = "GeneroId" Then
+                                selectedIndex = i
+                            End If
+                        Next
+
+                        ComboBoxGeneros.Items.Clear()
+
+                        ComboBoxGeneros.DataSource = dt
+                        ComboBoxGeneros.ValueMember = "GeneroID"
+                        ComboBoxGeneros.DisplayMember = "Nombre"
+                        ComboBoxGeneros.SelectedIndex = selectedIndex
+
+                        ComboBoxGeneros.Refresh()
+                        '************
+
+
 
                     Catch ex As Exception
 
@@ -239,7 +269,6 @@ Public Class AltaPelis
     End Function
 
     Private Sub btnAltaVolver_Click(sender As Object, e As EventArgs) Handles btnAltaVolver.Click
-        GestionPeliculas.loadData()
         Me.Dispose()
     End Sub
 End Class
