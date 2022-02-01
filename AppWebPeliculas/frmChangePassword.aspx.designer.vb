@@ -23,15 +23,6 @@ Partial Public Class frmChangePassword
     Protected WithEvents TextBoxPassActual As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control TextBoxPassNueva.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents TextBoxPassNueva As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''Control RequiredFieldValidator1.
     '''</summary>
     '''<remarks>
@@ -41,13 +32,22 @@ Partial Public Class frmChangePassword
     Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''Control RegularExpressionValidator1.
+    '''Control TextBoxPassNueva.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RegularExpressionValidator1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    Protected WithEvents TextBoxPassNueva As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control RequiredFieldValidatorNuevaPass.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidatorNuevaPass As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control TextBoxPassNuevaRepetida.
@@ -68,20 +68,29 @@ Partial Public Class frmChangePassword
     Protected WithEvents RequiredFieldValidatorCampoObligatorio As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''Control rexContra.
+    '''Control rexPassNueva.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents rexContra As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    Protected WithEvents rexPassNueva As Global.System.Web.UI.WebControls.RegularExpressionValidator
 
     '''<summary>
-    '''Control CompareValidator1.
+    '''Control ButtonCancelar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents CompareValidator1 As Global.System.Web.UI.WebControls.CompareValidator
+    Protected WithEvents ButtonCancelar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control ButtonAceptar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ButtonAceptar As Global.System.Web.UI.WebControls.Button
 End Class

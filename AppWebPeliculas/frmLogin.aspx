@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Pagina.Master" CodeBehind="frmLogin.aspx.vb" Inherits="AppWebPeliculas.frmLogin" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainPage" runat="server" >
-    <asp:Login ID="MiLogin" runat="server" BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" Height="203px" Width="381px">
+    <asp:Login ID="MiLogin" runat="server" BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" Height="105px" Width="364px">
         <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
         <LayoutTemplate>
             <table cellpadding="4" cellspacing="0" style="border-collapse:collapse;">
@@ -9,7 +9,7 @@
                     <td>
                         <table cellpadding="0" class="auto-style1">
                             <tr>
-                                <td align="center" colspan="2" style="color:White;background-color:#5D7B9D;font-size:0.9em;font-weight:bold;">Iniciar sesión</td>
+                                <td align="center" colspan="2" style="color:White;background-color:#5D7B9D;font-size:0.9em;font-weight:bold;" class="auto-style2">Iniciar sesión</td>
                             </tr>
                             <tr>
                                 <td align="right">
@@ -44,11 +44,6 @@
                                     <asp:Button ID="LoginButton" runat="server" BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" CommandName="Login" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284775" Text="Inicio de sesión" ValidationGroup="Login1" OnClick="LoginButton_Click" />
                                 </td>
                             </tr>
-                            <tr>
-                                <td align="right" colspan="2">
-                                    <asp:Button ID="ChangePassButton" runat="server" BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" CommandName="Login" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284775" Text="Cambiar contraseña" ValidationGroup="Login1" OnClick="ChangePassButton_Click" />
-                                </td>
-                            </tr>
                         </table>
                     </td>
                 </tr>
@@ -66,6 +61,9 @@
         .auto-style1 {
             height: 203px;
             width: 381px;
+        }
+        .auto-style2 {
+            height: 20px;
         }
     </style>
 </asp:Content>

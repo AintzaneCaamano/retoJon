@@ -3,4 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainPage" runat="server">
     
+    <asp:Menu ID="Menu1" runat="server">
+        <Items>
+            <asp:MenuItem Text="Cambiar contraseña" Value="Cambiar contraseña"></asp:MenuItem>
+        </Items>
+    </asp:Menu>
+    
 </asp:Content>

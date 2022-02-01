@@ -91,10 +91,10 @@ Public Class frmLogin
     End Sub
 
     Protected Sub MiLogin_Authenticate(sender As Object, e As AuthenticateEventArgs) Handles MiLogin.Authenticate
+
         Dim usuarioEscrito As String = MiLogin.UserName
         Dim passEscrita As String = MiLogin.Password
         'Dim sql As String = "SELECT Password FROM Clientes WHERE Nombre = '" & usuarioEscrito & "'"
-
 
         Dim sql As String = "SELECT COUNT(*) FROM Clientes WHERE [Nombre] = @Nombre AND [Password] = @Password"
         Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
