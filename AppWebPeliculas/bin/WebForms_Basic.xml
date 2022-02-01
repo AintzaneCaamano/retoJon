@@ -37,6 +37,24 @@ AppWebPeliculas
  Devuelve el objeto de registro Asp.
  </summary>
 </member>
+<member name="F:AppWebPeliculas.frmChangePassword._SqlDataSourcePeliculas">
+<summary>
+Control SqlDataSourcePeliculas.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmChangePassword._GridView1">
+<summary>
+Control GridView1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:AppWebPeliculas.frmChangePassword._TextBoxPassActual">
 <summary>
 Control TextBoxPassActual.
