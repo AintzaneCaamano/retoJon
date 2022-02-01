@@ -1,23 +1,21 @@
 ﻿Public Class ModificarPelis
-    Dim peli As DataGridViewRow = Nothing
     'Variables BBDD
     Dim file As String = IO.Path.Combine(IO.Directory.GetCurrentDirectory(), "EMPRESA.mdb")
     Dim cnnString As String = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={file}"
-
-    Public Sub New(row As DataGridViewRow)
+    Dim idPeli As Integer
+    Public Sub New(id As Integer)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-
+        idPeli = id
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        Me.peli = row
         ModificarPelis_Load()
         rellenarGeneros()
     End Sub
     Private Sub ModificarPelis_Load()
 
         Dim cnnDB As OleDb.OleDbConnection = New OleDb.OleDbConnection(cnnString)
-        Dim idPeli As Integer = Me.peli.Cells.Item(0).Value
+
 
         Try
             cnnDB.Open()
@@ -67,7 +65,6 @@
     End Sub
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim cnnDB As OleDb.OleDbConnection = New OleDb.OleDbConnection(cnnString)
-        Dim idPeli As Integer = Me.peli.Cells.Item(0).Value
 
         Try
             cnnDB.Open()
@@ -111,11 +108,6 @@
 
                         If cmd.ExecuteNonQuery() > 0 Then
                             MessageBox.Show("Datos actualizados correctamente", "Resultado")
-
-                            peli.Cells.Item(1).Value = txtBoxTitulo.Text
-                            peli.Cells.Item(2).Value = txtBoxAnyo.Text
-                            peli.Cells.Item(3).Value = TextBtxtBoxDirector.Text
-                            peli.Cells.Item(4).Value = ComboBoxGeneros.Text
 
                             Me.Dispose()
                         Else

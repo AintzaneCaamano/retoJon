@@ -14,6 +14,22 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\in2dam-b\Desktop\VideoClub\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,6 +66,18 @@
   <PropertyGroup>
     <ApplicationIcon>Resources\icono.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>F0586789AE852F128E15D17AE11FE17ADF153E01</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AppPeliculas_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -76,56 +104,50 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltaPelis.Designer.vb">
+    <Compile Include="Forms\Peliculas\AltaPelis.Designer.vb">
       <DependentUpon>AltaPelis.vb</DependentUpon>
     </Compile>
-    <Compile Include="AltaPelis.vb">
+    <Compile Include="Forms\Peliculas\AltaPelis.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DetallesCliente.Designer.vb">
-      <DependentUpon>DetallesCliente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DetallesCliente.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GestionClientes.Designer.vb">
+    <Compile Include="Forms\Clientes\GestionClientes.Designer.vb">
       <DependentUpon>GestionClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="GestionClientes.vb">
+    <Compile Include="Forms\Clientes\GestionClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarPelis.Designer.vb">
+    <Compile Include="Forms\Peliculas\ModificarPelis.Designer.vb">
       <DependentUpon>ModificarPelis.vb</DependentUpon>
     </Compile>
-    <Compile Include="ModificarPelis.vb">
+    <Compile Include="Forms\Peliculas\ModificarPelis.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Municipio.vb" />
-    <Compile Include="Principal.Designer.vb">
+    <Compile Include="Modelo\Municipio.vb" />
+    <Compile Include="Forms\Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
-    <Compile Include="Principal.vb">
+    <Compile Include="Forms\Principal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Provincia.vb" />
-    <Compile Include="RegistrarCliente.Designer.vb">
+    <Compile Include="Modelo\Provincia.vb" />
+    <Compile Include="Forms\Clientes\RegistrarCliente.Designer.vb">
       <DependentUpon>RegistrarCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarCliente.vb">
+    <Compile Include="Forms\Clientes\RegistrarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateCliente.Designer.vb">
+    <Compile Include="Forms\Clientes\UpdateCliente.Designer.vb">
       <DependentUpon>UpdateCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="UpdateCliente.vb">
+    <Compile Include="Forms\Clientes\UpdateCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente.vb" />
-    <Compile Include="Peliculas.vb" />
-    <Compile Include="GestionPeliculas.Designer.vb">
+    <Compile Include="Modelo\Cliente.vb" />
+    <Compile Include="Modelo\Peliculas.vb" />
+    <Compile Include="Forms\Peliculas\GestionPeliculas.Designer.vb">
       <DependentUpon>GestionPeliculas.vb</DependentUpon>
     </Compile>
-    <Compile Include="GestionPeliculas.vb">
+    <Compile Include="Forms\Peliculas\GestionPeliculas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -146,16 +168,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AltaPelis.resx">
+    <EmbeddedResource Include="Forms\Peliculas\AltaPelis.resx">
       <DependentUpon>AltaPelis.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionPeliculas.resx">
+    <EmbeddedResource Include="Forms\Peliculas\GestionPeliculas.resx">
       <DependentUpon>GestionPeliculas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionClientes.resx">
+    <EmbeddedResource Include="Forms\Clientes\GestionClientes.resx">
       <DependentUpon>GestionClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarPelis.resx">
+    <EmbeddedResource Include="Forms\Peliculas\ModificarPelis.resx">
       <DependentUpon>ModificarPelis.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -164,17 +186,18 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal.resx">
+    <EmbeddedResource Include="Forms\Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarCliente.resx">
+    <EmbeddedResource Include="Forms\Clientes\RegistrarCliente.resx">
       <DependentUpon>RegistrarCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateCliente.resx">
+    <EmbeddedResource Include="Forms\Clientes\UpdateCliente.resx">
       <DependentUpon>UpdateCliente.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="AppPeliculas_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -188,12 +211,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EMPRESA.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\icono.ico" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -39,7 +39,6 @@
                         If cmd.ExecuteNonQuery() > 0 Then
                             MessageBox.Show("Cliente dado de alta correctamente", "Resultado")
 
-                            GestionClientes.CargarDatosClientes()
                             Me.Dispose()
                         Else
                             MessageBox.Show("Error al dar de alta", "Resultado")
@@ -168,7 +167,7 @@
 
                     Try
 
-                        lastInsertId = cmd.ExecuteScalar()
+                        lastInsertId = cmd.ExecuteScalar() + 1
 
                     Catch ex As Exception
                         MessageBox.Show(ex.Message)

@@ -2,16 +2,6 @@ Public Class GestionClientes
 
     Dim cnnString As String = My.Settings.EMPRESAConnectionString
 
-    Private _formDetallesCliente As DetallesCliente
-    Public Property FormDetallesCliente() As DetallesCliente
-        Get
-            Return _formDetallesCliente
-        End Get
-        Set(ByVal value As DetallesCliente)
-            _formDetallesCliente = value
-        End Set
-    End Property
-
     Private _formUpdateCliente As UpdateCliente
     Public Property FormUpdateCliente() As UpdateCliente
         Get
@@ -31,6 +21,8 @@ Public Class GestionClientes
             _formRegistrarCliente = value
         End Set
     End Property
+
+    Dim ds As BindingSource
 
     Private Sub GestionUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarDatosClientes()
@@ -53,12 +45,15 @@ Public Class GestionClientes
                     Try
 
                         Dim dt As DataTable = New DataTable()
+                        ds = New BindingSource()
+
                         Using adapter As OleDb.OleDbDataAdapter = New OleDb.OleDbDataAdapter(cmd)
                             adapter.Fill(dt)
                         End Using
 
-                        GridUsuarios.DataSource = dt
-                        GridUsuarios.Refresh()
+                        ds.DataSource = dt
+                        GridUsuarios.DataSource = ds
+                        ds.ResetBindings(False)
 
                     Catch ex As Exception
 
@@ -107,23 +102,20 @@ Public Class GestionClientes
                             Dim cliente As Cliente = New Cliente()
 
                             For Each row As DataRow In dt.Rows
-                                Dim municipio As Municipio = New Municipio()
 
-                                cliente.Id = row.Field(Of Integer)("ClienteId")
-                                cliente.Nombre = row.Field(Of String)("NombreCliente")
-                                cliente.Apellido1 = row.Field(Of String)("Apellido1")
-                                cliente.Apellido2 = row.Field(Of String)("Apellido2")
-                                cliente.Direccion = row.Field(Of String)("Direccion")
-                                cliente.Cp = row.Field(Of String)("CP")
-                                cliente.Password = row.Field(Of String)("Password")
-                                cliente.EsBaja = row.Field(Of Boolean)("EsBaja")
+                                MessageBox.Show(
+                                    $"Id: {row.Field(Of Integer)("ClienteId")} 
+                                    {Environment.NewLine}Nombre: {row.Field(Of String)("NombreCliente")} 
+                                    {Environment.NewLine}1er Apellido: {row.Field(Of String)("Apellido1")}
+                                    {Environment.NewLine}2do Apellido: {row.Field(Of String)("Apellido2")}
+                                    {Environment.NewLine}Dirección: {row.Field(Of String)("Direccion")} 
+                                    {Environment.NewLine}Código Postal: {row.Field(Of String)("CP")} 
+                                    {Environment.NewLine}Contraseña: {row.Field(Of String)("Password")} 
+                                    {Environment.NewLine}Dado de Baja: {IIf(row.Field(Of Boolean)("EsBaja"), "Sí", "No")}
+                                    {Environment.NewLine}Municipio: {row.Field(Of String)("NombreMunicipio")}"
+                                )
 
-                                municipio.Nombre = row.Field(Of String)("NombreMunicipio")
-
-                                cliente.Municipio = municipio
                             Next
-
-
 
                         Catch ex As Exception
 
@@ -164,10 +156,12 @@ Public Class GestionClientes
                         Dim sql As String = $"UPDATE Clientes SET EsBaja = 1 WHERE ClienteId = {idCliente}"
                         Dim cmd As OleDb.OleDbCommand = New OleDb.OleDbCommand(sql, cnnDB)
 
-                        If cmd.ExecuteNonQuery() > 0 Then
-                            MessageBox.Show("Cliente dado de baja con exito")
-                        Else
-                            MessageBox.Show("Ha ocurrido un error al dar de baja al cliente", "Aviso")
+                        If MessageBox.Show("¿Seguro que quieres dar de baja al cliente?", "Aviso", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+                            If cmd.ExecuteNonQuery() > 0 Then
+                                MessageBox.Show("Cliente dado de baja con exito")
+                            Else
+                                MessageBox.Show("Ha ocurrido un error al dar de baja al cliente", "Aviso")
+                            End If
                         End If
 
                     Catch ex As Exception
@@ -188,30 +182,25 @@ Public Class GestionClientes
     End Sub
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         Try
-
-            _formUpdateCliente = New UpdateCliente(GridUsuarios.Rows.Item(GridUsuarios.SelectedCells.Item(0).RowIndex))
+            Dim id As Integer = GridUsuarios.Rows.Item(GridUsuarios.SelectedCells.Item(0).RowIndex).Cells.Item("ClienteId").Value
+            _formUpdateCliente = New UpdateCliente(id)
             Me.Hide()
             _formUpdateCliente.ShowDialog()
+            CargarDatosClientes()
             Me.Show()
 
-            GridUsuarios.Refresh()
         Catch ex As ArgumentOutOfRangeException
             MessageBox.Show("Selecciona un registro para poder modificarlo", "Aviso")
         End Try
     End Sub
 
     Private Sub BtnRegistrar_Click(sender As Object, e As EventArgs) Handles BtnRegistrar.Click
-        Try
-            Dim idCliente = GridUsuarios.Rows.Item(GridUsuarios.SelectedCells.Item(0).RowIndex).Cells.Item("ClienteId").Value
 
-            _formRegistrarCliente = New RegistrarCliente()
-            Me.Hide()
-            _formRegistrarCliente.ShowDialog()
-            Me.Show()
+        _formRegistrarCliente = New RegistrarCliente()
+        Me.Hide()
+        _formRegistrarCliente.ShowDialog()
+        CargarDatosClientes()
+        Me.Show()
 
-            GridUsuarios.Refresh()
-        Catch ex As ArgumentOutOfRangeException
-            MessageBox.Show("Selecciona un registro para poder modificarlo", "Aviso")
-        End Try
     End Sub
 End Class

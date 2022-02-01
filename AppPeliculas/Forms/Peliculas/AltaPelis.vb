@@ -13,7 +13,6 @@ Public Class AltaPelis
     Dim REGULAREXP As String = "[0-9]"
     Dim id As Integer
 
-
     Public Sub New()
         InitializeComponent()
         rellenarGeneros()
@@ -84,7 +83,7 @@ Public Class AltaPelis
 
     Private Sub actualizarId()
         ' instanciamos la base de datos
-        Dim cnnDB As OleDb.OleDbConnection = New OleDb.OleDbConnection(cnnString)
+        Dim cnnDB As OleDbConnection = New OleDbConnection(cnnString)
 
 
         Try
@@ -93,7 +92,7 @@ Public Class AltaPelis
 
                 Try
                     Dim sql As String = "SELECT MAX(PeliculaId) FROM Peliculas"
-                    Dim cmd As OleDb.OleDbCommand = New OleDb.OleDbCommand(sql, cnnDB)
+                    Dim cmd As OleDbCommand = New OleDbCommand(sql, cnnDB)
 
                     Try
 
@@ -122,7 +121,7 @@ Public Class AltaPelis
         Try
 
             ' instanciamos la base de datos
-            Dim cnnDB As OleDb.OleDbConnection = New OleDb.OleDbConnection(cnnString)
+            Dim cnnDB As OleDbConnection = New OleDbConnection(cnnString)
 
             Try
                 cnnDB.Open()
@@ -130,11 +129,8 @@ Public Class AltaPelis
 
                     Try
 
-                        'id = cmd.ExecuteNonQuery() + 1
-
-                        'Dim Sql = String.Format("INSERT into Peliculas (PeliculaId, Titulo, Duracion, CodGenero, Anyo, Productora, Pais, Precio, Director) VALUES ({0}, {1}, {2}, {3}. {4}, {5}, {6}, {7}, {8});", id, peli.titulo, peli.duracion, peli.anyo, peli.productora, peli.pais, peli.precio, peli.director)
                         Dim Sql = "INSERT into Peliculas ([PeliculaId], [Titulo], [Duracion], [CodGenero], [Anyo], [Productora], [Pais], [Precio], [Director]) VALUES (@PeliculaId, @Titulo, @Duracion, @CodGenero, @Anyo, @Productora, @Pais, @Precio, @Director)"
-                        Dim cmd As OleDb.OleDbCommand = New OleDb.OleDbCommand(Sql, cnnDB)
+                        Dim cmd As OleDbCommand = New OleDb.OleDbCommand(Sql, cnnDB)
 
                         cmd.Parameters.AddWithValue("@PeliculaId", peli.Id)
                         cmd.Parameters.AddWithValue("@Titulo", peli.titulo)
@@ -149,9 +145,7 @@ Public Class AltaPelis
 
                         If cmd.ExecuteNonQuery() > 0 Then
                             MessageBox.Show("Pelicula insertada correctamente", "Resultado")
-
-                            GestionPeliculas.gridViewPelis.Rows.Add(peli.Id, peli.titulo, peli.anyo, peli.director, ComboBoxGeneros.Text)
-
+                            Me.Dispose()
                         Else
                             MessageBox.Show("Error al insertar", "Resultado")
                         End If
@@ -182,8 +176,6 @@ Public Class AltaPelis
     End Function
 
     Function isNum(text As String) As Boolean
-        'RegEx System.Text.RegularExpressions
-        'System.Text.RegularExpressions.Match(text, REGULAR, RegexOptions.IgnoreCase)
 
         If Regex.IsMatch(text, REGULAREXP) Then
             Return True
@@ -207,21 +199,6 @@ Public Class AltaPelis
                     Dim cmd As OleDb.OleDbCommand = New OleDb.OleDbCommand(sql, cnnDB)
 
                     Try
-
-                        ' Dim dataReader As OleDbDataReader = cmd.ExecuteReader()
-
-
-                        'While dataReader.Read()
-
-                        'Me.ComboBoxGeneros.Items.Add(dataReader.Item(0))
-
-                        'End While
-
-                        'Dim dic As New Dictionary(Of Integer, String)
-                        'Me.ComboBoxGeneros.DataSource = dic
-                        'Me.ComboBoxGeneros.ValueMember = "Key"
-                        'Me.ComboBoxGeneros.DisplayMember = "Value"
-                        'NameOf(variable)
 
                         '*******
                         Dim dt As DataTable = New DataTable()

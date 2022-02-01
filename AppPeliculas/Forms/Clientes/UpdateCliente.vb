@@ -1,17 +1,18 @@
 Public Class UpdateCliente
     Dim cnnString As String = My.Settings.EMPRESAConnectionString
 
-    Private _cliente As DataGridViewRow
-    Public Property Cliente() As DataGridViewRow
+    Private _idProvincia As String
+
+    Private _idCliente As Integer
+    Public Property IdCliente() As Integer
         Get
-            Return _cliente
+            Return _idCliente
         End Get
-        Set(ByVal value As DataGridViewRow)
-            _cliente = value
+        Set(ByVal value As Integer)
+            _idCliente = value
         End Set
     End Property
 
-    Private _idProvincia As String
     Public Property IdProvincia() As String
         Get
             Return _idProvincia
@@ -31,11 +32,10 @@ Public Class UpdateCliente
         End Set
     End Property
 
-    Public Sub New(dr As DataGridViewRow)
+    Public Sub New(id As Integer)
 
         InitializeComponent()
-        _cliente = dr
-        Dim idCliente As Integer = _cliente.Cells.Item(0).Value
+        _idCliente = id
 
         Dim cnnDB As OleDb.OleDbConnection = New OleDb.OleDbConnection(cnnString)
 
@@ -205,7 +205,6 @@ Public Class UpdateCliente
 
     Private Sub BtnUpdateUsuario_Click(sender As Object, e As EventArgs) Handles BtnUpdateUsuario.Click
         Dim cnnDB As OleDb.OleDbConnection = New OleDb.OleDbConnection(cnnString)
-        Dim idCliente As Integer = _cliente.Cells.Item(0).Value
 
         Try
             cnnDB.Open()
@@ -244,7 +243,7 @@ Public Class UpdateCliente
 
                     Sql += $" WHERE [ClienteId] = @ClienteId"
 
-                    cmd.Parameters.AddWithValue("@ClienteId", idCliente).OleDbType = OleDb.OleDbType.Integer
+                    cmd.Parameters.AddWithValue("@ClienteId", _idCliente).OleDbType = OleDb.OleDbType.Integer
                     cmd.CommandText = Sql
 
 
@@ -252,11 +251,6 @@ Public Class UpdateCliente
 
                         If cmd.ExecuteNonQuery() > 0 Then
                             MessageBox.Show("Datos actualizados correctamente", "Resultado")
-
-                            _cliente.Cells.Item(1).Value = TextNombre.Text
-                            _cliente.Cells.Item(2).Value = TextApellido1.Text
-                            _cliente.Cells.Item(3).Value = TextApellido2.Text
-                            _cliente.Cells.Item(4).Value = ComboMunicipio.Text
 
                             Me.Dispose()
                         Else
