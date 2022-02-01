@@ -1,4 +1,7 @@
-﻿Public Class GestionPeliculas
+﻿Imports System.IO
+Imports System.Text
+Imports Newtonsoft.Json
+Public Class GestionPeliculas
     Dim file As String = IO.Path.Combine(IO.Directory.GetCurrentDirectory(), "EMPRESA.mdb")
     Dim cnnString As String = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={file}"
 
@@ -204,5 +207,100 @@
                 cnnDB.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
+        Dim info As List(Of Peliculas) = New List(Of Peliculas)()
+        Dim appPath As String = Application.StartupPath()
+        Dim jsonPath As String = Path.Combine(appPath, "Data", "info.json")
+
+        Dim dt As DataTable = CType(_bs.DataSource, DataTable)
+
+        For i As Integer = 0 To dt.Rows.Count - 1
+            Dim peli1 As Peliculas = New Peliculas()
+
+            peli1.titulo = dt.Rows(i)("Titulo")
+            peli1.anyo = dt.Rows(i)("Año")
+            If Not IsDBNull(dt.Rows(i)("Director")) Then
+                peli1.director = dt.Rows(i)("Director")
+            Else
+                peli1.director = " "
+            End If
+            info.Add(peli1)
+        Next
+
+        Dim fs As FileStream
+        Try
+            If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
+                ':::Si la carpeta existe creamos o sobreescribios el archivo txt
+                fs = System.IO.File.Create(jsonPath)
+                fs.Close()
+                jsonPath = Path.Combine(FolderBrowserDialog1.SelectedPath, "info.json")
+                Dim escribir As New StreamWriter(jsonPath)
+                escribir.WriteLine(JsonConvert.SerializeObject(info))
+                escribir.Close()
+                MsgBox("Fichero generado en " & jsonPath, MsgBoxStyle.Information, "Información")
+            End If
+        Catch ex As Exception
+            MsgBox("Se presento un problema al momento de crear el archivo: " & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+
+
+        Dim json As String = JsonConvert.SerializeObject(info)
+    End Sub
+
+    Private Sub btnGuardarCsv_Click(sender As Object, e As EventArgs) Handles btnGuardarCsv.Click
+        Dim info As List(Of Peliculas) = New List(Of Peliculas)()
+        Dim appPath As String = Application.StartupPath()
+        Dim filePath As String = Path.Combine(appPath, "Data", "info.csv")
+        Dim separador As String = ";"
+
+        Dim dt As DataTable = CType(_bs.DataSource, DataTable)
+
+        For i As Integer = 0 To dt.Rows.Count - 1
+            Dim peli1 As Peliculas = New Peliculas()
+
+            peli1.titulo = dt.Rows(i)("Titulo")
+            peli1.anyo = dt.Rows(i)("Año")
+            If Not IsDBNull(dt.Rows(i)("Director")) Then
+                peli1.director = dt.Rows(i)("Director")
+            Else
+                peli1.director = " "
+            End If
+            info.Add(peli1)
+        Next
+
+        Dim fs As FileStream
+
+        Try
+            If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
+                ':::Si la carpeta existe creamos o sobreescribios el archivo txt
+                fs = System.IO.File.Create(filePath)
+                fs.Close()
+                filePath = Path.Combine(FolderBrowserDialog1.SelectedPath, "info.csv")
+
+
+
+                Dim sw As New StreamWriter(filePath, False, Encoding.UTF8)
+
+                Dim headers As String() = {"Titulo", "Año", "Director", "CodGenero"}
+                sw.WriteLine(String.Join(separador, headers))
+
+                For i = 0 To dt.Rows.Count - 1
+                    Dim fields As String = dt.Rows(i).Item(1) & separador & dt.Rows(i).Item(2) & separador & dt.Rows(i).Item(3) & separador & dt.Rows(i).Item(4) & separador
+
+
+                    sw.WriteLine(String.Join(separador, fields))
+                Next
+                sw.Close()
+
+                MsgBox("Fichero generado en " & filePath, MsgBoxStyle.Information, "Información")
+            End If
+        Catch ex As Exception
+            MsgBox("Se presento un problema al momento de crear el archivo: " & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+
+
+        Dim json As String = JsonConvert.SerializeObject(info)
     End Sub
 End Class

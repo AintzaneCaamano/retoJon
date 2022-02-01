@@ -25,7 +25,7 @@
                     cmd.Parameters.AddWithValue("@Direccion", TextDireccion.Text).OleDbType = OleDb.OleDbType.WChar
                     cmd.Parameters.AddWithValue("@CP", TextCP.Text).OleDbType = OleDb.OleDbType.WChar
                     cmd.Parameters.AddWithValue("@MunId", ComboMunicipio.SelectedValue).OleDbType = OleDb.OleDbType.Integer
-                    cmd.Parameters.AddWithValue("@Password", Password.Text).OleDbType = OleDb.OleDbType.WChar
+                    cmd.Parameters.AddWithValue("@Password", EncryptPass(Password.Text)).OleDbType = OleDb.OleDbType.WChar
 
                     If (Not Password.Text = PasswordTest.Text) Then
                         MessageBox.Show("Las contraseñas no coinciden", "Validación")
@@ -196,4 +196,18 @@
 
         End Try
     End Sub
+
+    Private Function EncryptPass(password As String, Optional offset As Integer = 5) As String
+        Dim hash As String = ""
+
+        For i = 0 To password.Length - 1
+            hash += CStr(i * offset + Asc(password.Chars(i)))
+        Next
+
+        Return hash
+    End Function
+
+    Private Function VerifyPash(password As String, encryptedPassword As String, offset As Integer) As Boolean
+        Return EncryptPass(password, offset) = encryptedPassword
+    End Function
 End Class
