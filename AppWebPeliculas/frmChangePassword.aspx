@@ -2,47 +2,55 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainPage" runat="server" >
     <br>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Introduce su contraseña actual&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBoxPassActual" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBoxPassActual" runat="server" TextMode="Password"></asp:TextBox>
 &nbsp;&nbsp; 
     </p>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
+         runat="server"
+         controlToValidate = "TextBoxPassActual"
+         ErrorMessage = "El campo es obligatorio"
+         EnableClientScript="false"
+         ForeColor = "Red"></asp:RequiredFieldValidator>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Introduce su nueva contraseña&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBoxPassNueva" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBoxPassNueva" runat="server" TextMode="Password"></asp:TextBox>
         <br>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+        <br>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorNuevaPass" runat="server"
          controlToValidate = "TextBoxPassNueva"
-         ErrorMessage = "El campo uno es obligatorio"
+         ErrorMessage = "El campo es obligatorio"
          EnableClientScript="false"
-         ForeColor = "Red">
-    </asp:RequiredFieldValidator>
+         ForeColor = "Red"></asp:RequiredFieldValidator>
         <br/>
-    <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator1"
-        controlToValidate="TextBoxPassNueva"
-         ValidationExpression="^(?=.\d)(?=.[\u0021-\u002b\u003c-\u0040])(?=.[A-Z])(?=.[a-z])\S{8,16}$" 
-         ErrorMessage="La contraseña debe tener minimo 8 caracteres y maximo 16 y tiene que contener 1 Mayuscula, 1 minusculas, 1 digitos y 1 caracter especial"
-                forecolor="Red">
-    </asp:RegularExpressionValidator>
     </p>
-    <p>Vuelva a introducir su nueva contraseña&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="TextBoxPassNuevaRepetida" runat="server"></asp:TextBox>
-    <br>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidatorCampoObligatorio" runat="server"
+    <p>Vuelva a introducir su nueva contraseña&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox 
+        ID="TextBoxPassNuevaRepetida" runat="server" TextMode="Password"></asp:TextBox>
+   <br>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorCampoObligatorio" 
+         runat="server"
          controlToValidate = "TextBoxPassNuevaRepetida"
-         ErrorMessage = "El campo uno es obligatorio"
+         ErrorMessage = "El campo es obligatorio"
          EnableClientScript="false"
-         ForeColor = "Red">
-    </asp:RequiredFieldValidator>
-        <br/>
-    <asp:RegularExpressionValidator runat="server" ID="rexContra"
-        controlToValidate="TextBoxPassNueva"
-         ValidationExpression="^(?=.\d)(?=.[\u0021-\u002b\u003c-\u0040])(?=.[A-Z])(?=.[a-z])\S{8,16}$" 
+         ForeColor = "Red"></asp:RequiredFieldValidator>
+    <br>
+        <asp:CompareValidator ErrorMessage="Las contraseñas deben coincidir" ControlToValidate="TextBoxPassNueva" ControlToCompare="TextBoxPassNuevaRepetida" ForeColor="Red" runat="server" />
+        <br />
+    <asp:RegularExpressionValidator runat="server" ID="rexPassNueva"
+         controlToValidate="TextBoxPassNueva"
+         ValidationExpression="^(?=.*[A-Z]){1,}(?=.*[a-z]){1,}(?=.*\d){1,}(?=.*[^A-Za-z0-9]){1,}.{8,16}$" 
          ErrorMessage="La contraseña debe tener minimo 8 caracteres y maximo 16 y tiene que contener 1 Mayuscula, 1 minusculas, 1 digitos y 1 caracter especial"
-                forecolor="Red">
+         forecolor="Red">
     </asp:RegularExpressionValidator>
-    <asp:CompareValidator ID="CompareValidator1" runat="server"
-        ErrorMessage="CompareValidator" ControlToValidate="TextBoxPassNueva" ValueToCompare="TextBoxPassNuevaRepetida"></asp:CompareValidator>
+        <br/>
+        <br>
+    </p>
+    <p>
+        <asp:Button ID="ButtonCancelar" runat="server" 
+            Text="CANCELAR" Width="127px" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="ButtonAceptar" runat="server" 
+            Text="ACEPTAR" Width="127px" />
     </p>    
 </asp:Content>
 
-<asp:Content ID="Content4" runat="server" contentplaceholderid="head">
-    </asp:Content>
 
 

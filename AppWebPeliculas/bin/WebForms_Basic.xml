@@ -46,15 +46,6 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:AppWebPeliculas.frmChangePassword._TextBoxPassNueva">
-<summary>
-Control TextBoxPassNueva.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
 <member name="F:AppWebPeliculas.frmChangePassword._RequiredFieldValidator1">
 <summary>
 Control RequiredFieldValidator1.
@@ -64,9 +55,18 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:AppWebPeliculas.frmChangePassword._RegularExpressionValidator1">
+<member name="F:AppWebPeliculas.frmChangePassword._TextBoxPassNueva">
 <summary>
-Control RegularExpressionValidator1.
+Control TextBoxPassNueva.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmChangePassword._RequiredFieldValidatorNuevaPass">
+<summary>
+Control RequiredFieldValidatorNuevaPass.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -91,18 +91,27 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:AppWebPeliculas.frmChangePassword._rexContra">
+<member name="F:AppWebPeliculas.frmChangePassword._rexPassNueva">
 <summary>
-Control rexContra.
+Control rexPassNueva.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:AppWebPeliculas.frmChangePassword._CompareValidator1">
+<member name="F:AppWebPeliculas.frmChangePassword._ButtonCancelar">
 <summary>
-Control CompareValidator1.
+Control ButtonCancelar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmChangePassword._ButtonAceptar">
+<summary>
+Control ButtonAceptar.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -112,6 +121,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:AppWebPeliculas.frmLogin._MiLogin">
 <summary>
 Control MiLogin.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmPrincipal._Menu1">
+<summary>
+Control Menu1.
 </summary>
 <remarks>
 Campo generado automáticamente.
