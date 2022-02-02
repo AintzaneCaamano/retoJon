@@ -37,7 +37,7 @@ AppWebPeliculas
  Devuelve el objeto de registro Asp.
  </summary>
 </member>
-<member name="F:AppWebPeliculas.frmChangePassword._SqlDataSourcePeliculas">
+<member name="F:AppWebPeliculas.frmPeliculas._SqlDataSourcePeliculas">
 <summary>
 Control SqlDataSourcePeliculas.
 </summary>
@@ -46,7 +46,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:AppWebPeliculas.frmChangePassword._GridView1">
+<member name="F:AppWebPeliculas.frmPeliculas._GridView1">
 <summary>
 Control GridView1.
 </summary>
@@ -319,24 +319,6 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:AppWebPeliculas.Site_Mobile._ViewSwitcher1">
 <summary>
 Control ViewSwitcher1.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:AppWebPeliculas.WebForm1._SqlDataSource1">
-<summary>
-Control SqlDataSource1.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:AppWebPeliculas.WebForm1._GridPeliculas">
-<summary>
-Control GridPeliculas.
 </summary>
 <remarks>
 Campo generado automáticamente.

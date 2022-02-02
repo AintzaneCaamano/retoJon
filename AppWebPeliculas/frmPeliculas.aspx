@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Pagina.Master" CodeBehind="frmPeliculas.aspx.vb" Inherits="AppWebPeliculas.frmLogin" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Pagina.Master" CodeBehind="frmPeliculas.aspx.vb" Inherits="AppWebPeliculas.frmPeliculas" %>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainPage" runat="server" >
     <asp:SqlDataSource ID="SqlDataSourcePeliculas" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Titulo], [Duracion], [Director] FROM [Peliculas]">
   </asp:SqlDataSource>
@@ -9,12 +9,11 @@
                     <asp:BoundField DataField="Titulo" HeaderText="Titulo" SortExpression="Titulo" />
                     <asp:BoundField DataField="Duracion" HeaderText="Duracion" SortExpression="Duracion" />
                     <asp:BoundField DataField="Director" HeaderText="Director" SortExpression="Director" />
-                    <asp:ButtonField CommandName="btnAlquilar" Text="Añadir al carrito" />
+                    <asp:ButtonField CommandName="btnCarrito" Text="Añadir al carrito" />
                 </Columns>
                 <SelectedRowStyle BackColor="#66FF66" />
             </asp:GridView>
-
-
+    
     </asp:Content>
 
 <asp:Content ID="Content4" runat="server" contentplaceholderid="head">

@@ -37,9 +37,99 @@ AppWebPeliculas
  Devuelve el objeto de registro Asp.
  </summary>
 </member>
-<member name="F:AppWebPeliculas.frmChangePassword._ChangePassword1">
+<member name="F:AppWebPeliculas.frmPeliculas._SqlDataSourcePeliculas">
 <summary>
-Control ChangePassword1.
+Control SqlDataSourcePeliculas.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmPeliculas._GridView1">
+<summary>
+Control GridView1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmChangePassword._TextBoxPassActual">
+<summary>
+Control TextBoxPassActual.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmChangePassword._RequiredFieldValidator1">
+<summary>
+Control RequiredFieldValidator1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmChangePassword._TextBoxPassNueva">
+<summary>
+Control TextBoxPassNueva.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmChangePassword._RequiredFieldValidatorNuevaPass">
+<summary>
+Control RequiredFieldValidatorNuevaPass.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmChangePassword._TextBoxPassNuevaRepetida">
+<summary>
+Control TextBoxPassNuevaRepetida.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmChangePassword._RequiredFieldValidatorCampoObligatorio">
+<summary>
+Control RequiredFieldValidatorCampoObligatorio.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmChangePassword._rexPassNueva">
+<summary>
+Control rexPassNueva.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmChangePassword._ButtonCancelar">
+<summary>
+Control ButtonCancelar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmChangePassword._ButtonAceptar">
+<summary>
+Control ButtonAceptar.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -49,6 +139,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:AppWebPeliculas.frmLogin._MiLogin">
 <summary>
 Control MiLogin.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.frmPrincipal._Menu1">
+<summary>
+Control Menu1.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -100,18 +199,27 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:AppWebPeliculas.Pagina._LoginName1">
+<member name="F:AppWebPeliculas.Pagina._Label1">
 <summary>
-Control LoginName1.
+Control Label1.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:AppWebPeliculas.Pagina._LoginStatus1">
+<member name="F:AppWebPeliculas.Pagina._LoginName">
 <summary>
-Control LoginStatus1.
+Control LoginName.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:AppWebPeliculas.Pagina._LoginStatus">
+<summary>
+Control LoginStatus.
 </summary>
 <remarks>
 Campo generado automáticamente.
