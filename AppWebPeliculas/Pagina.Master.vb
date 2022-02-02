@@ -5,4 +5,7 @@
 
     End Sub
 
+    Protected Sub MiMenu_MenuItemClick(sender As Object, e As MenuEventArgs) Handles MiMenu.MenuItemClick
+        Response.Redirect("frmPeliculas.aspx")
+    End Sub
 End Class
